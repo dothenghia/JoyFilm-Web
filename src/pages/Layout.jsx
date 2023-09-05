@@ -9,8 +9,7 @@ const Layout = () => {
 
     return (
         <div style={{ backgroundColor: 'green' }}>
-            <h1>Layout page</h1>
-
+            
             {/* Header Navigation Bar */}
             <Header/>
 
