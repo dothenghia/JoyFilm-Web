@@ -1,4 +1,5 @@
-const Carousel = ({ topFilms }) => {
+
+const Carousel = () => {
     console.log('[Carousel] Render')
 
     return (
@@ -6,11 +7,7 @@ const Carousel = ({ topFilms }) => {
             <h3>
                 CAROUSELLLLLLLLLLL
             </h3>
-            {
-                topFilms.map((film, index) => {
-                    return (<p key={film}>{film}</p>)
-                })
-            }
+            
         </div>
     );
 };
