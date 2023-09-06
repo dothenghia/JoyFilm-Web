@@ -1,0 +1,111 @@
+/* Slider */
+.carousel .slider-wrapper {
+    aspect-ratio: 16 / 6.8;
+    z-index: 0;
+}
+
+.carousel .slide div {
+    transform: translateY(-9%);
+}
+
+.carousel-texts {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding-bottom: 13%;
+    padding-top: 5%;
+    padding-left: 30px;
+    text-align: left;
+    width: 100%;
+    background: linear-gradient(0deg, rgba(5, 21, 30, 1) 0%, rgba(5, 21, 30, 0) 100%);
+}
+
+
+/* Thumbnails */
+.carousel .thumbs-wrapper {
+    width: 100%;
+    margin: 0;
+    transform: translateY(-50%);
+    background: linear-gradient(0deg, rgba(5, 21, 30, 1) 50%, rgba(5, 21, 30, 0) 100%);
+    z-index: 20;
+}
+
+.thumbs.animated {
+    display: flex;
+    max-width: 1280px;
+    margin: auto;
+    padding: 0 30px;
+    justify-content: space-between;
+    z-index: 20;
+}
+
+.carousel .thumbs-wrapper .thumb {
+    border-radius: 16px;
+    margin: 0;
+    padding: 0;
+    border-color: transparent;
+    aspect-ratio: 16 / 9;
+
+}
+
+.carousel .thumbs-wrapper .thumb.selected {
+    outline-width: 3px;
+    border-color: white;
+}
+
+.carousel .thumb:hover {
+    border-color: #666666;
+}
+
+
+@media only screen and (max-width : 767px) {
+    .carousel .thumbs-wrapper {
+        display: none;
+    }
+
+    .carousel .slider-wrapper {
+        margin-top: 56px;
+        aspect-ratio: 16 / 9;
+    }
+
+    .carousel .slide div {
+        transform: translateY(0%);
+    }
+
+    .carousel-texts {
+        bottom: 0;
+        padding-left: 0;
+        padding-bottom: 20px;
+        padding-top: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media only screen and (min-width : 768px) and (max-width : 1023px) {
+    .carousel .slider-wrapper {
+        aspect-ratio: 16 / 8;
+        z-index: 0;
+    }
+
+    .carousel .slide div {
+        transform: translateY(-5%);
+    }
+
+    .carousel-texts {
+        padding-bottom: 9%;
+        padding-top: 5%;
+    }
+
+    .carousel .thumbs-wrapper .thumb {
+        border-radius: 12px;
+    }
+
+}
+
+@media only screen and (min-width : 1280px) {
+    .carousel-texts {
+        padding-left: calc((100% - 1280px) / 2 + 30px);
+    }
+}

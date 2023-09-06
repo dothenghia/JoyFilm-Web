@@ -9,9 +9,9 @@ export default {
     theme: {
         extend: {
             colors: {
-                'primary': '#e50914',
+                'primary': '#e50914', // 229 9 20
 
-                'background': '#05151e',
+                'background': '#05151e', // 5 21 30
                 'card-bg': '#f7f7f7',
                 'border': '#DEE7F5',
 

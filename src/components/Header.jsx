@@ -11,11 +11,11 @@ const Header = () => {
 
     return (
         <div>
-            <nav className="bg-transparent fixed w-full z-20 top-0 left-0">
+            <nav className="bg-transparent fixed w-full z-20 top-0 left-0 shadow-[inset_0px_14px_20px_-10px_rgba(0,0,0,0.7)]" >
                 <BlurBox>
                     <div className="max-w-screen-xl mx-auto flex flex-wrap items-center justify-between">
                         <div className="flex">
-                            <Link to="/" className="flex items-center p-3">
+                            <Link to="/" className="flex items-center py-3 px-5">
                                 <img src={logo} className="h-8 mr-2" alt="Logo" />
                                 <img src={joyfilm} className="h-7" alt="JoyFilm" />
                             </Link>
@@ -33,7 +33,7 @@ const Header = () => {
 
 
                         <div className="flex">
-                            <div className="relative hidden md:flex mr-4">
+                            <div className="relative hidden md:flex mr-6">
                                 <Link
                                     to='/tim-kiem'
                                     className="absolute inset-y-0 right-0 flex items-center px-3">

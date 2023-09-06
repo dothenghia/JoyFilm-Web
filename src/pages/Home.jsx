@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Controller from "../controllers/controller";
 
-import CarouselThumbnails from '../components/CarouselThumbnails'
+import CarouselThumbnails from '../components/CarouselThumbnails/CarouselThumbnails'
 import MovieSlide from '../components/MovieSlide'
 
 const Home = () => {
@@ -22,7 +22,7 @@ const Home = () => {
 
 
     return (
-        <div>
+        <div id="home" className="bg-background">
             <CarouselThumbnails />
             
 
