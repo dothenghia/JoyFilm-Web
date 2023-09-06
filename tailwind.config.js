@@ -9,17 +9,15 @@ export default {
     theme: {
         extend: {
             colors: {
-                'li-header': '#ededed',
-				'li-bg-1': '#e9ebee',
-				'li-bg-2': '#f7f7f7',
-				'li-bg-3': '#ffffff',
-				'li-border': '#c9c9c9',
+                'primary': '#e50914',
 
-				'li-heading': '#121212',
-				'li-subheading': '#545454',
-				'li-text': '#111',
-				'li-primary': '#0ea5e9',
+                'background': '#05151e',
+                'card-bg': '#f7f7f7',
+                'border': '#DEE7F5',
 
+                'heading': '#F4F4F4',
+                'subheading': '#D6D6D6',
+                'text': '#FAFAFA',
             },
         },
 

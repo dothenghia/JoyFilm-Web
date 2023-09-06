@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import Controller from "../../controllers/controller";
+import Controller from "../controllers/controller";
 
-import MovieSlide from '../../components/MovieSlide'
+import MovieSlide from '../components/MovieSlide'
 
 const Home = () => {
     const [movies , setMovies] = useState(null)
@@ -18,7 +18,7 @@ const Home = () => {
 
     return (
         <div style={{backgroundColor: 'red'}}>
-            <h1>Home page</h1>
+            <img src="src\assets\thumbnail.jpg"/>
             
             <h3>Phim mới cập nhật</h3>
             {
