@@ -1,11 +1,14 @@
 import { useEffect, useState } from "react";
 import Controller from "../controllers/controller";
 
+import CarouselThumbnails from '../components/CarouselThumbnails'
 import MovieSlide from '../components/MovieSlide'
 
 const Home = () => {
+    // ------ Data State
     const [movies , setMovies] = useState(null)
 
+    // ------ Fetching Data
     useEffect(() => {
         console.log('[Home] Fetch HomePage Data')
         const fetchData = async () => {
@@ -16,10 +19,15 @@ const Home = () => {
         fetchData()
     }, [])
 
+
+
     return (
-        <div style={{backgroundColor: 'red'}}>
-            <img src="src\assets\thumbnail.jpg"/>
+        <div>
+            <CarouselThumbnails />
             
+
+
+
             <h3>Phim mới cập nhật</h3>
             {
                 movies && movies.newMovies &&

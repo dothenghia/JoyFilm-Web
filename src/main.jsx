@@ -2,7 +2,6 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 
 import './main.css'
-import 'flowbite'
 import App from './App.jsx'
 
 import "@fontsource/inter/100.css"
