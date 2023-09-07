@@ -16,5 +16,13 @@
         @apply block py-3 md:py-4 px-4 mr-3 md:mr-0 font-medium text-heading rounded-md md:rounded-none md:hover:pb-2 md:hover:border-b-[3px] md:hover:bg-transparent md:hover:border-primary;
     }
 
-    
+    /* [Page] Section Container */
+    .section-container {
+        @apply w-full max-w-screen-xl px-6 mx-auto; 
+    }
+
+    /* [Page] Section Title */
+    .section-title {
+        @apply text-heading font-semibold text-lg md:text-xl uppercase;
+    }
 }

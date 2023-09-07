@@ -2,8 +2,15 @@
 
 const MovieCard = ({ movie }) => {
     return (
-        <div>
-            <p>{movie.name}</p>
+        <div
+            className='w-full bg-purple-500'
+        >
+
+                <h2 className="text-heading line-clamp-1">
+                    {movie.name}
+                </h2>
+
+
         </div>
     );
 };

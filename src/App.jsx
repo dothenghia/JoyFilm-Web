@@ -15,6 +15,7 @@ import NotFound from "./pages/NotFound";
 
 export default function App() {
     return (
+        // Config router for application
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<Layout />}>

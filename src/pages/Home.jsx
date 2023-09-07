@@ -6,7 +6,8 @@ import MovieSlide from '../components/MovieSlide'
 
 const Home = () => {
     // ------ Data State
-    const [movies , setMovies] = useState(null)
+    const [movies, setMovies] = useState(null)
+
 
     // ------ Fetching Data
     useEffect(() => {
@@ -20,43 +21,51 @@ const Home = () => {
     }, [])
 
 
-
     return (
         <div id="home" className="bg-background">
-            <CarouselThumbnails />
             
+            {/* Carousel of 4 Top Movies */}
+            <CarouselThumbnails />
 
+            {/* NEW Movies Section */}
+            <div className="section-container">
+                <h3 className="section-title">Phim mới cập nhật</h3>
+                {
+                    movies && movies.newMovies && <MovieSlide movies={movies.newMovies} />
+                }
+            </div>
 
+            {/* THEATER Movies Section */}
+            <div className="section-container">
+                <h3 className="section-title">Phim chiếu rạp</h3>
+                {/* {
+                    movies && movies.theaterMovies && <MovieSlide movies={movies.theaterMovies} />
+                } */}
+            </div>
 
-            <h3>Phim mới cập nhật</h3>
-            {
-                movies && movies.newMovies &&
-                <MovieSlide movies={movies.newMovies}/>
-            }
+            {/* SINGLE Movies Section */}
+            <div className="section-container">
+                <h3 className="section-title">Phim lẻ</h3>
+                {
+                    movies && movies.singleMovies && <MovieSlide movies={movies.singleMovies} />
+                }
+            </div>
 
-            <h3>Phim chiếu rạp</h3>
-            {
-                movies && movies.theaterMovies &&
-                <MovieSlide movies={movies.theaterMovies}/>
-            }
+            {/* SERIES Movies Section */}
+            <div className="section-container">
+                <h3 className="section-title">Phim bộ</h3>
+                {/* {
+                    movies && movies.seriesMovies && <MovieSlide movies={movies.seriesMovies} />
+                } */}
+            </div>
 
-            <h3>Phim lẻ</h3>
-            {
-                movies && movies.singleMovies &&
-                <MovieSlide movies={movies.singleMovies}/>
-            }
-
-            <h3>Phim bộ</h3>
-            {
-                movies && movies.seriesMovies &&
-                <MovieSlide movies={movies.seriesMovies}/>
-            }
-
-            <h3>Hoạt hình</h3>
-            {
-                movies && movies.cartoonMovies &&
-                <MovieSlide movies={movies.cartoonMovies}/>
-            }
+            {/* CARTOON Movies Section */}
+            <div className="section-container">
+                <h3 className="section-title">Hoạt hình</h3>
+                {/* {
+                    movies && movies.cartoonMovies && <MovieSlide movies={movies.cartoonMovies} />
+                } */}
+            </div>
 
         </div>
     );
