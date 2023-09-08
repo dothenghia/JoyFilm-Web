@@ -36,7 +36,7 @@
     }
     /* [Page] Section Divider */
     .section-divider {
-        @apply mx-6 mt-4 border-b-2 border-slate-300;
+        @apply mt-4 border-b-2 border-slate-300;
     }
 
 

@@ -6,7 +6,7 @@ const MovieCard = ({ movie }) => {
         <div className='w-full bg-transparent px-4'>
             
             {/* Movie Card container */}
-            <Link className="group">
+            <Link to={`/phim/${movie.slug}`} className="group">
 
                 {/* Thumbnail wrapper */}
                 <div className="overflow-hidden rounded-2xl relative">

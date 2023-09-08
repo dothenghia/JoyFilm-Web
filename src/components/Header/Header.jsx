@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 
-import BlurBox from "./BlurBox";
-import logo from '../assets/logo.png';
-import joyfilm from '../assets/joyfilm.png';
+import BlurBox from "../BlurBox/BlurBox";
+import logo from '../../assets/logo.png';
+import joyfilm from '../../assets/joyfilm.png';
 
 const Header = () => {
 

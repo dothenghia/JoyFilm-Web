@@ -29,8 +29,8 @@ export default function App() {
                     <Route path="phim-bo" element={<Series />} />
                     <Route path="hoat-hinh" element={<Cartoon />} />
 
-                    <Route path="phim/:slug" element={<Movie />}/>
-                    
+                    <Route path="phim/:slug" element={<Movie />} />
+
                     <Route path="*" element={<NotFound />} />
                 </Route>
             </Routes>

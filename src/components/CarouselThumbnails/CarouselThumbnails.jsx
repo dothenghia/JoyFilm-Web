@@ -70,7 +70,7 @@ const CarouselThumbnails = () => {
 
                                 {/* 'Play' Button & 'Add to Watch List' Button */}
                                 <div className='flex space-x-3 sm:space-x-4 md:space-x-6 mt-2 md:mt-3'>
-                                    <Link className='bg-primary hover:bg-red-700 text-text text-sm sm:text-lg px-2 py-2 sm:px-3 md:px-4 md:py-3  md:text-lg flex items-center'>
+                                    <Link to={`/phim/${item.slug}`} className='bg-primary hover:bg-red-700 text-text text-sm sm:text-lg px-2 py-2 sm:px-3 md:px-4 md:py-3  md:text-lg flex items-center'>
                                         <svg className='mr-1 w-5 h-5 '
                                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                                             <polygon points="5 3 19 12 5 21 5 3"></polygon>
