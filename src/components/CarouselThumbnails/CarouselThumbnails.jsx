@@ -51,7 +51,7 @@ const CarouselThumbnails = () => {
                 showIndicators={false}
                 stopOnHover={false}
                 swipeable={true}
-                // autoPlay={true}
+                autoPlay={true}
                 dynamicHeight={false}
                 infiniteLoop={true}
                 thumbWidth='20%'
@@ -72,14 +72,14 @@ const CarouselThumbnails = () => {
                                 <div className='flex space-x-3 sm:space-x-4 md:space-x-6 mt-2 md:mt-3'>
                                     <Link className='bg-primary hover:bg-red-700 text-text text-sm sm:text-lg px-2 py-2 sm:px-3 md:px-4 md:py-3  md:text-lg flex items-center'>
                                         <svg className='mr-1 w-5 h-5 '
-                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                                             <polygon points="5 3 19 12 5 21 5 3"></polygon>
                                         </svg>
                                         Xem Phim
                                     </Link>
                                     <button className='bg-slate-200/20 border-2 hover:bg-slate-400 hover:border-slate-400 text-text text-sm sm:text-lg px-2 py-2 sm:px-3 md:px-4 md:py-3  md:text-lg flex items-center'>
                                         <svg className='mr-1 w-5 h-5 '
-                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" >
+                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" >
                                             <line x1="12" y1="2" x2="12" y2="22"></line>
                                             <line x1="2" y1="12" x2="22" y2="12"></line>
                                         </svg>

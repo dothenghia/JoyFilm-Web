@@ -16,13 +16,30 @@
         @apply block py-3 md:py-4 px-4 mr-3 md:mr-0 font-medium text-heading rounded-md md:rounded-none md:hover:pb-2 md:hover:border-b-[3px] md:hover:bg-transparent md:hover:border-primary;
     }
 
+    
     /* [Page] Section Container */
     .section-container {
-        @apply w-full max-w-screen-xl px-6 mx-auto; 
+        @apply w-full max-w-screen-xl px-6 mx-auto pt-5; 
     }
-
     /* [Page] Section Title */
     .section-title {
-        @apply text-heading font-semibold text-lg md:text-xl uppercase;
+        @apply text-heading font-semibold text-lg sm:text-xl uppercase;
     }
+    /* [Home Page] Section Title LINK */
+    .section-title-link {
+        @apply text-heading font-semibold text-lg sm:text-xl uppercase hover:text-blue-500;
+    }
+
+    /* [Page] Section 'More' button */
+    .section-more {
+        @apply inline-flex mt-3 font-medium text-heading hover:text-blue-500;
+    }
+    /* [Page] Section Divider */
+    .section-divider {
+        @apply mx-6 mt-4 border-b-2 border-slate-300;
+    }
+
+
+
+
 }
