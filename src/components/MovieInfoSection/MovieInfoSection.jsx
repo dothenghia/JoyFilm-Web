@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import BlurBox from '../BlurBox/BlurBox'
 
@@ -19,32 +20,48 @@ const CategoryChip = ({ categories }) => {
     )
 }
 
+const RenderInformationArray = (array) => {
+    if (array[0] === '') {
+        return ' N/A'
+    } else {
+        return (
+            array.map((item, index) => {
+                return (
+                    <span key={index}
+                        className="movie-primary-text">
+                        {` ${item}${(index === array.length - 1) ? '' : ','}`}
+                    </span>
+                )
+            })
+        )
+    }
+}
+
 const MovieInfoSection = ({ info }) => {
+    const [showMore, setShowMore] = useState(false)
     console.log(info)
 
     return (
         <div>
 
-
-
+            {/* Thumbnail & Brief Information */}
             <div className="w-full overflow-hidden md:overflow-visible max-h-[500px] md:max-h-none md:aspect-[16/7] relative">
                 {/* Poster Background */}
                 <div className="aspect-[7/11] md:aspect-[16/7]">
-                    <img src={info.poster_url} className='hidden md:block w-full h-full object-cover brightness-[50%]' />
-                    <img src={info.thumb_url} className='md:hidden w-full h-full object-cover blur-sm brightness-[60%] -translate-y-[1/5]' />
+                    <img src={info.poster_url} className='hidden md:block w-full h-full object-cover brightness-[25%]' />
+                    <img src={info.thumb_url} className='md:hidden w-full h-full object-cover blur-sm brightness-[50%] -translate-y-[1/5]' />
                 </div>
 
                 {/* Information Container */}
                 <div className="absolute z-10 top-0 left-0 h-full w-full">
                     <div className="h-full section-container-no-py flex flex-col md:flex-row justify-center items-center">
                         {/* ------ Image Thumnail ------ */}
-                        <div className="h-[90%] md:h-full aspect-[9/16] pb-4 md:pb-0 pt-16 md:pt-[74px] lg:pt-20 xl:pb-10 flex justify-center md:justify-end">
+                        <div className="h-[90%] md:h-full aspect-[9/16] pb-4 md:pb-0 pt-16 md:pt-[74px] lg:pt-20 xl:pb-14 flex justify-center md:justify-end">
                             <img src={info.thumb_url} className='h-full rounded-2xl object-cover' />
                         </div>
 
-
-                        {/* ------ Brief Information ------ */}
-                        <div className="hidden md:block self-end xl:pb-10 pl-8 lg:pr-2 xl:pr-7">
+                        {/* ------ Brief Information for Medium & Large screen------ */}
+                        <div className="hidden md:block self-end xl:pb-14 pl-8 lg:pr-2 xl:pr-7">
                             <h1 className="movie-name">{info.name}</h1>
                             <h2 className="movie-origin-name">{info.origin_name}</h2>
                             <p className="movie-normal-text">{info.time}</p>
@@ -73,7 +90,7 @@ const MovieInfoSection = ({ info }) => {
                             <p className='movie-normal-text mt-3 -mb-1 line-clamp-2' dangerouslySetInnerHTML={{ __html: info.content }} />
                         </div>
 
-                        {/* ------ 'Xem' Button & 'Them vao danh sach' Button ------ */}
+                        {/* ------ 'Xem' Button & 'Them vao danh sach' Button for Small screen ------ */}
                         <div className='md:hidden flex space-x-4 pb-2'>
                             <Link className='bg-primary text-text text-sm px-2 py-2 sm:px-3 flex items-center'>
                                 <svg className='mr-1 w-5 h-5 ' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"> <polygon points="5 3 19 12 5 21 5 3"></polygon> </svg>
@@ -91,17 +108,35 @@ const MovieInfoSection = ({ info }) => {
 
             <div className='h-28 md:h-40 z-0 -translate-y-[99%] bg-gradient-to-t from-background from-0% to-transparent to-100%'></div>
 
+
             {/* ------ Detail Information ------ */}
-            <div className="md:hidden section-container -mt-28">
-                <h1 className="movie-name">{info.name}</h1>
-                <h2 className="movie-origin-name">{info.origin_name}</h2>
-                <p className="movie-normal-text">{info.time}</p>
+            <div className="section-container px-8 pb-20 -mt-28 md:-mt-32">
+                <h1 className='hidden md:block section-title mb-1 min-[945px]:mb-2'>Thông tin phim</h1>
+
+                <h1 className="md:hidden movie-name">{info.name}</h1>
+                <h2 className="md:hidden movie-origin-name">{info.origin_name}</h2>
+
                 <p className="movie-normal-text">Trạng thái :
                     <span className="text-blue-500 text-lg font-bold"> {info.episode_current}</span>
                 </p>
-
-
-                <p className='movie-normal-text mt-3 -mb-1 line-clamp-2' dangerouslySetInnerHTML={{ __html: info.content }} />
+                <p className="movie-normal-text">Thời lượng : {info.time}</p>
+                <p className="movie-normal-text">Đạo diễn : {RenderInformationArray(info.director)}</p>
+                <p className="movie-normal-text">Diễn viên : {RenderInformationArray(info.actor)}</p>
+                <p className="movie-normal-text">Thể loại :
+                    {info.category.map((category, index) => {
+                        return (
+                            <span key={index} className="movie-primary-text">
+                                {` ${category['name']}${(index === info.category.length - 1) ? '' : ','}`}
+                            </span>
+                        )
+                    })}
+                </p>
+                <p className="movie-normal-text">Quốc gia : <span className="movie-primary-text">{info.country[0]['name']}</span></p>
+                <p className="movie-normal-text">Năm sản xuất : <span className="movie-primary-text">{info.year}</span></p>
+                <p className="movie-normal-text">Nội dung :
+                    <p className={`movie-normal-text ${showMore ? '' : 'line-clamp-1'}`} dangerouslySetInnerHTML={{ __html: info.content }} />
+                    <button className="text-blue-500 inline-block underline underline-offset-2" onClick={() => { setShowMore(!showMore) }}>{showMore ? 'Ẩn bớt' : 'Xem thêm'}</button>
+                </p>
             </div>
 
 
