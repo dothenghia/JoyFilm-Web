@@ -7,7 +7,7 @@ import 'slick-carousel/slick/slick-theme.css'
 import MovieCard from '../MovieCard/MovieCard'
 
 const MovieSlide = ({ movies }) => {
-    console.log(movies)
+    // console.log(movies)
 
     const slideRef = useRef(null)
     const nextMovie = () => {

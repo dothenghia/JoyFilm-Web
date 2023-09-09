@@ -37,9 +37,10 @@ const RenderInformationArray = (array) => {
     }
 }
 
-const MovieInfoSection = ({ info }) => {
+const MovieInfoSection = ({ info , media }) => {
+    console.log('[Movie] Info Render')
+    
     const [showMore, setShowMore] = useState(false)
-    console.log(info)
 
     return (
         <div>
@@ -73,7 +74,8 @@ const MovieInfoSection = ({ info }) => {
 
                             {/* ------ 'Xem' Button & 'Them vao danh sach' Button ------ */}
                             <div className='flex space-x-4 mt-4 min-[945px]:mt-5'>
-                                <Link className='bg-primary hover:bg-red-700 text-text 
+                                <Link to={`/phim/${info.slug}?sv=0&tap=${media[0].server_data[0].slug}`}
+                                    className='bg-primary hover:bg-red-700 text-text 
                                     text-sm min-[896px]:text-base min-[945px]:text-lg lg:text-xl
                                     px-2 py-2 sm:px-3 md:px-4 md:py-2 flex items-center'>
                                     <svg className='mr-1 w-5 h-5 ' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"> <polygon points="5 3 19 12 5 21 5 3"></polygon> </svg>
@@ -110,7 +112,7 @@ const MovieInfoSection = ({ info }) => {
 
 
             {/* ------ Detail Information ------ */}
-            <div className="section-container px-8 pb-20 -mt-28 md:-mt-32">
+            <div className="section-container px-8 pb-20 -mt-28 md:-mt-36 xl:-mt-44">
                 <h1 className='hidden md:block section-title mb-1 min-[945px]:mb-2'>Thông tin phim</h1>
 
                 <h1 className="md:hidden movie-name">{info.name}</h1>
@@ -133,10 +135,10 @@ const MovieInfoSection = ({ info }) => {
                 </p>
                 <p className="movie-normal-text">Quốc gia : <span className="movie-primary-text">{info.country[0]['name']}</span></p>
                 <p className="movie-normal-text">Năm sản xuất : <span className="movie-primary-text">{info.year}</span></p>
-                <p className="movie-normal-text">Nội dung :
+                <div className="movie-normal-text">Nội dung :
                     <p className={`movie-normal-text ${showMore ? '' : 'line-clamp-1'}`} dangerouslySetInnerHTML={{ __html: info.content }} />
                     <button className="text-blue-500 inline-block underline underline-offset-2" onClick={() => { setShowMore(!showMore) }}>{showMore ? 'Ẩn bớt' : 'Xem thêm'}</button>
-                </p>
+                </div>
             </div>
 
 
