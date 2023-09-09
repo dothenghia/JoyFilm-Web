@@ -21,6 +21,9 @@
     .section-container {
         @apply w-full max-w-screen-xl px-6 mx-auto pt-5; 
     }
+    .section-container-no-py {
+        @apply w-full max-w-screen-xl px-6 mx-auto; 
+    }
     /* [Page] Section Title */
     .section-title {
         @apply text-heading font-semibold text-lg sm:text-xl uppercase;
@@ -41,5 +44,23 @@
 
 
 
-
+    /* [Movie] Title Name */
+    .movie-name {
+        @apply text-heading font-semibold 
+        text-2xl md:text-xl min-[896px]:text-2xl min-[945px]:text-3xl
+        mb-1 min-[945px]:mb-2;
+    }
+    /* [Movie] Title Origin Name */
+    .movie-origin-name {
+        @apply text-subheading
+        min-[896px]:text-base min-[945px]:text-xl
+        mb-1 min-[945px]:mb-2;
+    }
+    /* [Movie] Title other Info */
+    .movie-normal-text {
+        @apply text-sm lg:text-base text-text mb-1 min-[945px]:mb-2;
+    }
+    .movie-primary-text {
+        @apply text-sm lg:text-base text-blue-500;
+    }
 }
