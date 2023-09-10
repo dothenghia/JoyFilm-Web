@@ -9,13 +9,13 @@ const Layout = () => {
     return (
         <div id="layout">
 
-            {/* Header Navigation Bar */}
+            {/* ------ Header Navigation Bar ------ */}
             <Header />
 
-            {/* Child route rendering */}
+            {/* ------ Child route rendering ------ */}
             <Outlet />
 
-            {/* Footer */}
+            {/* ------ Footer ------ */}
             <Footer />
         </div>
     );

@@ -14,21 +14,21 @@ const Header = () => {
     return (
         <div id="header">
 
-            {/* Header Navigation bar */}
+            {/* ------ Header Navigation bar ------ */}
             <nav className="bg-transparent fixed w-full z-20 top-0 left-0 shadow-[inset_0px_14px_20px_-10px_rgba(0,0,0,0.7)]" >
                 <BlurBox>
                     <div className="max-w-screen-xl mx-auto flex flex-wrap items-center justify-between">
                         
-                        {/* Header Left Content */}
+                        {/* ------ Header Left Content ------ */}
                         <div className="flex">
 
-                            {/* Logo */}
+                            {/* ------ Logo ------ */}
                             <Link to="/" className="flex items-center py-3 px-4">
                                 <img src={logo} className="h-8 mr-2" alt="Logo" />
                                 <img src={joyfilm} className="h-7" alt="JoyFilm" />
                             </Link>
 
-                            {/* Navigation Links */}
+                            {/* ------ Navigation Links ------ */}
                             <div className="hidden md:flex flex-row">
                                 <Link to="/phim-moi" className="header-link">Phim mới</Link>
                                 <Link to="/chieu-rap" className="header-link">Phim chiếu rạp</Link>
@@ -40,10 +40,10 @@ const Header = () => {
                         </div>
 
 
-                        {/* Header Right Content */}
+                        {/* ------ Header Right Content ------ */}
                         <div className="flex">
 
-                            {/* Seach Input */}
+                            {/* ------ Seach Input ------ */}
                             <div className="relative hidden md:flex mr-5">
                                 <Link
                                     to='/tim-kiem'
@@ -55,7 +55,7 @@ const Header = () => {
                                 <input type="text" id="search-navbar" className="block w-full p-2 pl-4 text-md text-text rounded-lg border-none bg-black/50 placeholder:text-subheading" placeholder="Tìm kiếm..." />
                             </div>
 
-                            {/* Hamburger Button */}
+                            {/* ------ Hamburger Button ------ */}
                             <button data-collapse-toggle="navbar-search" type="button"
                                 aria-controls="navbar-search" aria-expanded="false"
                                 onClick={toggleNavbar}
@@ -68,11 +68,11 @@ const Header = () => {
                         </div>
 
 
-                        {/* Header Responsive Content when click the Hamburger Button */}
+                        {/* ------ Header Responsive Content when click the Hamburger Button ------ */}
                         <div id="navbar-search"
                             className="items-center justify-between w-full hidden md:hidden md:w-auto md:order-1">
 
-                            {/* Search Input */}
+                            {/* ------ Search Input ------ */}
                             <div className="ml-5 mr-3 mt-3 md:hidden flex">
                                 <input type="text" id="search-navbar" className="block w-full p-2 pl-4 text-md text-text rounded-lg border-none bg-black/50 placeholder:text-subheading" placeholder="Tìm kiếm..." />
                                 <Link
@@ -84,7 +84,7 @@ const Header = () => {
                                 </Link>
                             </div>
 
-                            {/* Navigation Links */}
+                            {/* ------ Navigation Links ------ */}
                             <div className="font-medium flex flex-col pl-2 md:pl-0 mt-4 mb-2 md:mb-0 md:flex-row md:space-x-0 md:mt-0">
                                 <Link to="/phim-moi" className="header-link">Phim mới</Link>
                                 <Link to="/chieu-rap" className="header-link">Phim chiếu rạp</Link>

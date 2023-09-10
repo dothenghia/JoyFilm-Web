@@ -25,10 +25,11 @@ const Home = () => {
     return (
         <div id="home" className="bg-background">
 
-            {/* Carousel of 4 Top Movies */}
+            {/* ------ Carousel of 4 Top Movies ------ */}
             <CarouselThumbnails />
 
-            {/* NEW Movies Section */}
+
+            {/* ------ NEW Movies Section ------ */}
             <div className="section-container">
                 <Link to='/phim-moi/1' className="section-title-link">Phim mới cập nhật</Link>
                 {movies && movies.newMovies && <MovieSlide movies={movies.newMovies} />}
@@ -43,7 +44,7 @@ const Home = () => {
 
 
 
-            {/* THEATER Movies Section */}
+            {/* ------ THEATER Movies Section ------ */}
             <div className="section-container">
                 <Link to='/chieu-rap/1' className="section-title-link">Phim chiếu rạp</Link>
                 {movies && movies.theaterMovies && <MovieSlide movies={movies.theaterMovies} />}
@@ -58,7 +59,7 @@ const Home = () => {
 
 
 
-            {/* SINGLE Movies Section */}
+            {/* ------ SINGLE Movies Section ------ */}
             <div className="section-container">
                 <Link to='/phim-le/1' className="section-title-link">Phim lẻ</Link>
                 {movies && movies.singleMovies && <MovieSlide movies={movies.singleMovies} />}
@@ -73,7 +74,7 @@ const Home = () => {
 
 
 
-            {/* SERIES Movies Section */}
+            {/* ------ SERIES Movies Section ------ */}
             <div className="section-container">
                 <Link to='/phim-bo/1' className="section-title-link">Phim bộ</Link>
                 {movies && movies.seriesMovies && <MovieSlide movies={movies.seriesMovies} />}
@@ -88,7 +89,7 @@ const Home = () => {
 
 
 
-            {/* CARTOON Movies Section */}
+            {/* ------ CARTOON Movies Section ------ */}
             <div className="section-container">
                 <Link to='/hoat-hinh/1' className="section-title-link">Hoạt hình</Link>
                 {movies && movies.cartoonMovies && <MovieSlide movies={movies.cartoonMovies} />}

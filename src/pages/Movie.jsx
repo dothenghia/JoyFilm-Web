@@ -10,8 +10,8 @@ const Movie = () => {
     // ------ Data State
     const [movie, setMovie] = useState(null)
     const [searchParams, setSearchParams] = useSearchParams()
-    let tap = searchParams.get('tap') // slug
-    let sv = searchParams.get('sv') || 0 // index
+    let tap = searchParams.get('tap') // index
+    let sv = searchParams.get('sv') // index
     console.log(tap, sv)
 
     // ------ Fetching Data
@@ -29,11 +29,11 @@ const Movie = () => {
     return (
         <div className="bg-background">
 
-            {/* Information Section */}
+            {/* ------ Information Section ------ */}
             {movie && !tap && !sv && <MovieInfoSection info={movie.movie} media={movie.episodes} />}
 
-            {/* Media Section */}
-            {movie && tap && sv && <MovieMediaSection info={movie.movie} media={movie.episodes} epSlug={tap} svIndex={sv} />}
+            {/* ------ Media Section ------ */}
+            {movie && tap && sv && <MovieMediaSection info={movie.movie} media={movie.episodes} epIndex={tap} svIndex={sv} />}
 
         </div>
     );

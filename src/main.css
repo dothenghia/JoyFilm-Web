@@ -73,9 +73,15 @@
     }
     /* [Movie Media] Episode Button */
     .episode-btn {
-        @apply px-3 py-2 text-sm rounded-md text-subheading bg-gray-700 hover:bg-gray-800 ;
+        @apply w-10 h-9 m-1 inline-flex justify-center items-center
+        text-sm rounded-md text-subheading bg-gray-700 hover:bg-gray-800 ;
     }
     .episode-btn-active {
         @apply text-heading bg-blue-500 hover:bg-blue-500;
     }
+    /* [Movie Media] Feature Button */
+    .feature-btn {
+        @apply py-1 px-2 rounded-md text-sm text-subheading bg-gray-700 hover:bg-gray-800 ;
+    }
+
 }

@@ -2,6 +2,41 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import BlurBox from '../BlurBox/BlurBox'
 
+const convertYouTubeUrl = (inputUrl) => {
+    if (!inputUrl.includes("watch?v=")) {
+        return inputUrl;
+    }
+
+    const videoId = inputUrl.split("watch?v=")[1];
+
+    const embedUrl = `https://www.youtube.com/embed/${videoId}`;
+    return embedUrl;
+}
+
+const TrailerFrame = ({ url }) => {
+    if (!url.includes("youtube")) {
+        return (
+            <iframe
+                className='aspect-video mx-auto w-full max-w-[700px]'
+                src={url}
+                allowFullScreen={true}
+                title="Video Trailer"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            ></iframe>
+        )
+    }
+
+    return (
+        <iframe
+            className='aspect-video mx-auto w-full max-w-[700px]'
+            src={convertYouTubeUrl(url)}
+            allowFullScreen={true}
+            title="Video Trailer"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        ></iframe>
+    )
+}
+
 const CategoryChip = ({ categories }) => {
     return (
         <div className="flex mt-2 min-[945px]:mt-3 space-x-3">
@@ -37,23 +72,23 @@ const RenderInformationArray = (array) => {
     }
 }
 
-const MovieInfoSection = ({ info , media }) => {
+const MovieInfoSection = ({ info, media }) => {
     console.log('[Movie] Info Render')
-    
+
     const [showMore, setShowMore] = useState(false)
 
     return (
         <div>
 
-            {/* Thumbnail & Brief Information */}
+            {/* ------ Thumbnail & Brief Information ------ */}
             <div className="w-full overflow-hidden md:overflow-visible max-h-[500px] md:max-h-none md:aspect-[16/7] relative">
-                {/* Poster Background */}
+                {/* ------ Poster Background ------ */}
                 <div className="aspect-[7/11] md:aspect-[16/7]">
                     <img src={info.poster_url} className='hidden md:block w-full h-full object-cover brightness-[25%]' />
                     <img src={info.thumb_url} className='md:hidden w-full h-full object-cover blur-sm brightness-[50%] -translate-y-[1/5]' />
                 </div>
 
-                {/* Information Container */}
+                {/* ------ Information Container ------ */}
                 <div className="absolute z-10 top-0 left-0 h-full w-full">
                     <div className="h-full section-container-no-py flex flex-col md:flex-row justify-center items-center">
                         {/* ------ Image Thumnail ------ */}
@@ -74,7 +109,8 @@ const MovieInfoSection = ({ info , media }) => {
 
                             {/* ------ 'Xem' Button & 'Them vao danh sach' Button ------ */}
                             <div className='flex space-x-4 mt-4 min-[945px]:mt-5'>
-                                <Link to={`/phim/${info.slug}?sv=0&tap=${media[0].server_data[0].slug}`}
+                                <Link to={`?sv=0&tap=0`}
+
                                     className='bg-primary hover:bg-red-700 text-text 
                                     text-sm min-[896px]:text-base min-[945px]:text-lg lg:text-xl
                                     px-2 py-2 sm:px-3 md:px-4 md:py-2 flex items-center'>
@@ -94,7 +130,9 @@ const MovieInfoSection = ({ info , media }) => {
 
                         {/* ------ 'Xem' Button & 'Them vao danh sach' Button for Small screen ------ */}
                         <div className='md:hidden flex space-x-4 pb-2'>
-                            <Link className='bg-primary text-text text-sm px-2 py-2 sm:px-3 flex items-center'>
+                            <Link to={`?sv=0&tap=0`}
+                            
+                                className='bg-primary text-text text-sm px-2 py-2 sm:px-3 flex items-center'>
                                 <svg className='mr-1 w-5 h-5 ' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"> <polygon points="5 3 19 12 5 21 5 3"></polygon> </svg>
                                 Xem Phim
                             </Link>
@@ -139,6 +177,21 @@ const MovieInfoSection = ({ info , media }) => {
                     <p className={`movie-normal-text ${showMore ? '' : 'line-clamp-1'}`} dangerouslySetInnerHTML={{ __html: info.content }} />
                     <button className="text-blue-500 inline-block underline underline-offset-2" onClick={() => { setShowMore(!showMore) }}>{showMore ? 'Ẩn bớt' : 'Xem thêm'}</button>
                 </div>
+
+
+                <h1 className='section-title mt-6 mb-1 min-[945px]:mb-2'>Trailer</h1>
+
+                {
+                    (info.trailer_url == "") ?
+                    (
+                        <p className="movie-normal-text">Không tìm thấy Trailer cho phim này</p>
+                    ) :
+                    (
+                        <TrailerFrame url={info.trailer_url} />
+                    )
+                }
+
+
             </div>
 
 

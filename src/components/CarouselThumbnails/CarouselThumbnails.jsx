@@ -46,7 +46,7 @@ const CarouselThumbnails = () => {
     return (
         <div id='carousel-thumbnails'>
 
-            {/* Carousel wrapper */}
+            {/* ------ Carousel wrapper ------ */}
             <Carousel showArrows={false}
                 showIndicators={false}
                 stopOnHover={false}
@@ -60,15 +60,15 @@ const CarouselThumbnails = () => {
                     slideItems.map((item) => (
                         <div key={item.id}>
 
-                            {/* Carousel Thumbnail Image */}
+                            {/* ------ Carousel Thumbnail Image ------ */}
                             <img src={item.poster_url} className='w-full h-full object-cover' />
 
-                            {/* Carousel Legend Text */}
+                            {/* ------ Carousel Legend Text ------ */}
                             <div className='carousel-texts '>
-                                {/* Title (Name) */}
+                                {/* ------ Title (Name) ------ */}
                                 <h1 className='block text-center md:text-left text-lg sm:text-2xl md:text-3xl font-semibold sm:font-bold text-text'>{item.name}</h1>
 
-                                {/* 'Play' Button & 'Add to Watch List' Button */}
+                                {/* ------ 'Play' Button & 'Add to Watch List' Button ------ */}
                                 <div className='flex space-x-3 sm:space-x-4 md:space-x-6 mt-2 md:mt-3'>
                                     <Link to={`/phim/${item.slug}`} className='bg-primary hover:bg-red-700 text-text text-sm sm:text-lg px-2 py-2 sm:px-3 md:px-4 md:py-3  md:text-lg flex items-center'>
                                         <svg className='mr-1 w-5 h-5 '
