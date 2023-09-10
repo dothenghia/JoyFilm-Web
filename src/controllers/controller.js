@@ -1,5 +1,6 @@
 import getHomePageMovies from "../functions/getHomePageMovies";
 import getMovie from "../functions/getMovie";
+import searchMovies from "../functions/searchMovies";
 
 export default async function Controller(type, ...payload) {
     switch (type) {
@@ -10,6 +11,11 @@ export default async function Controller(type, ...payload) {
 
         case 'GETMOVIE': {
             const movie = await getMovie(payload)
+            return movie
+        }
+
+        case 'SEARCHMOVIE': {
+            const movie = await searchMovies(payload)
             return movie
         }
 

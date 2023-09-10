@@ -3,8 +3,11 @@ import { Link } from "react-router-dom";
 import BlurBox from "../BlurBox/BlurBox";
 import logo from '../../assets/logo.png';
 import joyfilm from '../../assets/joyfilm.png';
+import { useRef, useState } from "react";
 
 const Header = () => {
+    const [searchInput, setSearchInput] = useState('')
+    const searchInputDOM = useRef(null)
 
     // ------ Event Handlers
     const toggleNavbar = () => {
@@ -18,7 +21,7 @@ const Header = () => {
             <nav className="bg-transparent fixed w-full z-20 top-0 left-0 shadow-[inset_0px_14px_20px_-10px_rgba(0,0,0,0.7)]" >
                 <BlurBox>
                     <div className="max-w-screen-xl mx-auto flex flex-wrap items-center justify-between">
-                        
+
                         {/* ------ Header Left Content ------ */}
                         <div className="flex">
 
@@ -46,13 +49,21 @@ const Header = () => {
                             {/* ------ Seach Input ------ */}
                             <div className="relative hidden md:flex mr-5">
                                 <Link
-                                    to='/tim-kiem'
+                                    to={`/tim-kiem?name=${searchInput}`}
                                     className="absolute inset-y-0 right-0 flex items-center px-3">
                                     <svg className="w-4 h-4 text-text" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
                                         <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
                                     </svg>
                                 </Link>
-                                <input type="text" id="search-navbar" className="block w-full p-2 pl-4 text-md text-text rounded-lg border-none bg-black/50 placeholder:text-subheading" placeholder="Tìm kiếm..." />
+                                <input type="text"
+                                    className="block w-full p-2 pl-4 text-md text-text rounded-lg border-none bg-black/50 placeholder:text-subheading"
+                                    placeholder="Tìm kiếm..."
+                                    value={searchInput}
+                                    onChange={(e) => { setSearchInput(e.target.value) }}
+                                    required
+                                    autoComplete="true"
+                                    ref={searchInputDOM}
+                                />
                             </div>
 
                             {/* ------ Hamburger Button ------ */}
@@ -74,9 +85,17 @@ const Header = () => {
 
                             {/* ------ Search Input ------ */}
                             <div className="ml-5 mr-3 mt-3 md:hidden flex">
-                                <input type="text" id="search-navbar" className="block w-full p-2 pl-4 text-md text-text rounded-lg border-none bg-black/50 placeholder:text-subheading" placeholder="Tìm kiếm..." />
+                                <input type="text"
+                                    className="block w-full p-2 pl-4 text-md text-text rounded-lg border-none bg-black/50 placeholder:text-subheading"
+                                    placeholder="Tìm kiếm..."
+                                    value={searchInput}
+                                    onChange={(e) => { setSearchInput(e.target.value) }}
+                                    required
+                                    autoComplete="true"
+                                    ref={searchInputDOM}
+                                />
                                 <Link
-                                    to='/tim-kiem'
+                                    to={`/tim-kiem?name=${searchInput}`}
                                     className="flex items-center px-3">
                                     <svg className="w-4 h-4 text-text" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
                                         <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />

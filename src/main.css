@@ -16,6 +16,12 @@
         @apply block py-3 md:py-4 px-4 mr-3 md:mr-0 font-medium text-heading rounded-md md:rounded-none md:hover:pb-2 md:hover:border-b-[3px] md:hover:bg-transparent md:hover:border-primary;
     }
 
+
+    .movies-grid {
+        @apply grid gap-5 grid-cols-2 md:grid-cols-4 lg:grid-cols-6;
+    }
+
+
     
     /* [Page] Section Container */
     .section-container {
@@ -27,6 +33,9 @@
     /* [Page] Section Title */
     .section-title {
         @apply text-heading font-semibold text-lg sm:text-xl uppercase;
+    }
+    .section-title-no-up {
+        @apply text-heading font-semibold text-lg sm:text-xl;
     }
     /* [Home Page] Section Title LINK */
     .section-title-link {
