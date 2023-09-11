@@ -3,6 +3,7 @@ import { useRef } from "react";
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
+import './MovieSlide.css'
 
 import MovieCard from '../MovieCard/MovieCard'
 
@@ -20,10 +21,10 @@ const MovieSlide = ({ movies }) => {
 
     // Setting for Movies Slide
     const settings = {
-        dots: false,
-        // lazyLoad: true,
+        dots: true,
+        lazyLoad: true,
         arrows: false,
-        infinite: false,
+        infinite: true,
         draggable: true,
         swipeToSlide: true,
         swipe: true,
@@ -71,11 +72,11 @@ const MovieSlide = ({ movies }) => {
             {/* Slide Control Buttons */}
             <div className="absolute right-4 -top-10 flex items-center justify-end">
                 <button className="group" onClick={prevMovie}>
-                    <svg className='w-5 h-5 sm:w-6 sm:h-6 text-white group-hover:text-blue-500 rotate-180 mr-2' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"> <polygon points="5 3 19 12 5 21 5 3"></polygon> </svg>
+                    <svg className='w-5 h-5 sm:w-6 sm:h-6 text-heading group-hover:text-secondary rotate-180 mr-2' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"> <polygon points="5 3 19 12 5 21 5 3"></polygon> </svg>
                 </button>
                 
                 <button className="group" onClick={nextMovie}>
-                    <svg className='w-5 h-5 sm:w-6 sm:h-6 text-white group-hover:text-blue-500' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"> <polygon points="5 3 19 12 5 21 5 3"></polygon> </svg>
+                    <svg className='w-5 h-5 sm:w-6 sm:h-6 text-heading group-hover:text-secondary' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"> <polygon points="5 3 19 12 5 21 5 3"></polygon> </svg>
                 </button>
             </div>
 

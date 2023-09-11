@@ -13,28 +13,28 @@ const slideItems = [
     {
         id: 2,
         name: "NGƯỜI KIẾN VÀ CHIẾN BINH ONG: THẾ GIỚI LƯỢNG TỬ",
-        original_name : 'Ant-Man and the Wasp: Quantumania',
+        original_name: 'Ant-Man and the Wasp: Quantumania',
         slug: "nguoi-kien-va-chien-binh-ong-the-gioi-luong-tu",
         poster_url: thumbnail1,
     },
     {
         id: 3,
         name: "XỨ SỞ CÁC NGUYÊN TỐ",
-        original_name : 'Elemental',
+        original_name: 'Elemental',
         slug: "xu-so-cac-nguyen-to",
         poster_url: thumbnail2,
     },
     {
         id: 4,
         name: "NGƯỜI NHỆN: DU HÀNH VŨ TRỤ NHỆN",
-        original_name : 'Spider-Man: Across the Spider-Verse',
+        original_name: 'Spider-Man: Across the Spider-Verse',
         slug: "nguoi-nhen-du-hanh-vu-tru-nhen",
         poster_url: thumbnail3,
     },
     {
         id: 6,
         name: "ANH EM SUPER MARIO",
-        original_name : 'The Super Mario Bros. Movie',
+        original_name: 'The Super Mario Bros. Movie',
         slug: "anh-em-super-mario",
         poster_url: thumbnail4,
     }
@@ -66,18 +66,19 @@ const CarouselThumbnails = () => {
                             {/* ------ Carousel Legend Text ------ */}
                             <div className='carousel-texts '>
                                 {/* ------ Title (Name) ------ */}
-                                <h1 className='block text-center md:text-left text-lg sm:text-2xl md:text-3xl font-semibold sm:font-bold text-text'>{item.name}</h1>
+                                <h1 className='block text-center md:text-left text-lg sm:text-2xl md:text-3xl font-semibold sm:font-bold text-heading'>{item.name}</h1>
 
                                 {/* ------ 'Play' Button & 'Add to Watch List' Button ------ */}
                                 <div className='flex space-x-3 sm:space-x-4 md:space-x-6 mt-2 md:mt-3'>
-                                    <Link to={`/phim/${item.slug}`} className='bg-primary hover:bg-red-700 text-text text-sm sm:text-lg px-2 py-2 sm:px-3 md:px-4 md:py-3  md:text-lg flex items-center'>
+                                    <Link to={`/phim/${item.slug}`}
+                                        className='play-button-color text-heading text-sm sm:text-lg px-2 py-2 sm:px-3 md:px-4 md:py-3  md:text-lg flex items-center'>
                                         <svg className='mr-1 w-5 h-5 '
                                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                                             <polygon points="5 3 19 12 5 21 5 3"></polygon>
                                         </svg>
                                         Xem Phim
                                     </Link>
-                                    <button className='bg-slate-200/20 border-2 hover:bg-slate-400 hover:border-slate-400 text-text text-sm sm:text-lg px-2 py-2 sm:px-3 md:px-4 md:py-3  md:text-lg flex items-center'>
+                                    <button className='add-button-color text-heading text-sm sm:text-lg px-2 py-2 sm:px-3 md:px-4 md:py-3  md:text-lg flex items-center'>
                                         <svg className='mr-1 w-5 h-5 '
                                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" >
                                             <line x1="12" y1="2" x2="12" y2="22"></line>

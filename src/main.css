@@ -13,14 +13,22 @@
 @layer components {
     /* [Header] Navigation Link Button */
     .header-link {
-        @apply block py-3 md:py-4 px-4 mr-3 md:mr-0 font-medium text-heading rounded-md md:rounded-none md:hover:pb-2 md:hover:border-b-[3px] md:hover:bg-transparent md:hover:border-primary;
+        @apply block py-3 md:py-4 px-4 mr-3 md:mr-0 font-medium text-heading rounded-md
+        md:rounded-none md:hover:pb-2 md:hover:border-b-[3px] md:hover:bg-transparent md:hover:border-primary;
     }
 
 
+    /* [Movie] Movie Grid */
     .movies-grid {
         @apply grid gap-5 grid-cols-2 md:grid-cols-4 lg:grid-cols-6;
     }
-
+    /* Play Button & Add Button */
+    .play-button-color {
+        @apply bg-primary hover:bg-primary-hv;
+    }
+    .add-button-color {
+        @apply bg-slate-200/20 border-2 hover:bg-slate-600 hover:border-slate-600;
+    }
 
     
     /* [Page] Section Container */
@@ -39,16 +47,16 @@
     }
     /* [Home Page] Section Title LINK */
     .section-title-link {
-        @apply text-heading font-semibold text-lg sm:text-xl uppercase hover:text-blue-500;
+        @apply text-heading font-semibold text-lg sm:text-xl uppercase hover:text-secondary;
     }
 
     /* [Page] Section 'More' button */
     .section-more {
-        @apply inline-flex mt-3 font-medium text-heading hover:text-blue-500;
+        @apply inline-flex mt-10 md:mt-6 font-medium text-heading hover:text-secondary;
     }
     /* [Page] Section Divider */
     .section-divider {
-        @apply mt-4 border-b-2 border-slate-300;
+        @apply mt-4 border-b-2 border-divider;
     }
 
 
@@ -70,27 +78,27 @@
         @apply text-sm lg:text-base text-text mb-1 min-[945px]:mb-2;
     }
     .movie-primary-text {
-        @apply text-sm lg:text-base text-blue-500;
+        @apply text-sm lg:text-base text-secondary;
     }
 
     /* [Movie Media] Server Tabs */
     .server-tab {
-        @apply inline-block px-4 py-2 text-sm font-medium rounded-t-lg text-subheading bg-gray-700 hover:bg-gray-800 ;
+        @apply inline-block px-4 py-2 text-sm font-medium rounded-t-lg text-text bg-gray-700 hover:bg-gray-800 ;
     }
     .server-tab-active {
-        @apply text-heading bg-blue-500 hover:bg-blue-500;
+        @apply text-heading bg-secondary hover:bg-secondary;
     }
     /* [Movie Media] Episode Button */
     .episode-btn {
         @apply w-10 h-9 m-1 inline-flex justify-center items-center
-        text-sm rounded-md text-subheading bg-gray-700 hover:bg-gray-800 ;
+        text-sm rounded-md text-text bg-gray-700 hover:bg-gray-800 ;
     }
     .episode-btn-active {
-        @apply text-heading bg-blue-500 hover:bg-blue-500;
+        @apply text-heading bg-secondary hover:bg-secondary;
     }
     /* [Movie Media] Feature Button */
     .feature-btn {
-        @apply py-1 px-2 rounded-md text-sm text-subheading bg-gray-700 hover:bg-gray-800 ;
+        @apply py-1 px-2 rounded-md text-sm text-text bg-gray-700 hover:bg-gray-800 ;
     }
 
 }

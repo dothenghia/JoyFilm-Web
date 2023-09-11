@@ -102,7 +102,7 @@ const MovieInfoSection = ({ info, media }) => {
                             <h2 className="movie-origin-name">{info.origin_name}</h2>
                             <p className="movie-normal-text">{info.time}</p>
                             <p className="movie-normal-text">Trạng thái :
-                                <span className="text-blue-500 text-lg font-bold"> {info.episode_current}</span>
+                                <span className="movie-primary-text text-lg font-bold"> {info.episode_current}</span>
                             </p>
 
                             <CategoryChip categories={info.category} />
@@ -111,13 +111,13 @@ const MovieInfoSection = ({ info, media }) => {
                             <div className='flex space-x-4 mt-4 min-[945px]:mt-5'>
                                 <Link to={`?sv=0&tap=0`}
 
-                                    className='bg-primary hover:bg-red-700 text-text 
+                                    className='play-button-color text-heading 
                                     text-sm min-[896px]:text-base min-[945px]:text-lg lg:text-xl
                                     px-2 py-2 sm:px-3 md:px-4 md:py-2 flex items-center'>
                                     <svg className='mr-1 w-5 h-5 ' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"> <polygon points="5 3 19 12 5 21 5 3"></polygon> </svg>
                                     Xem Phim
                                 </Link>
-                                <button className='bg-slate-200/20 border-2 hover:bg-slate-400 hover:border-slate-400 text-text 
+                                <button className='add-button-color text-heading 
                                     text-sm min-[896px]:text-base min-[945px]:text-lg lg:text-xl
                                     px-2 py-2 sm:px-3 md:px-4 md:py-2 flex items-center'>
                                     <svg className='mr-1 w-5 h-5 ' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" > <line x1="12" y1="2" x2="12" y2="22"></line> <line x1="2" y1="12" x2="22" y2="12"></line> </svg>
@@ -132,11 +132,11 @@ const MovieInfoSection = ({ info, media }) => {
                         <div className='md:hidden flex space-x-4 pb-2'>
                             <Link to={`?sv=0&tap=0`}
                             
-                                className='bg-primary text-text text-sm px-2 py-2 sm:px-3 flex items-center'>
+                                className='bg-primary text-heading text-sm px-2 py-2 sm:px-3 flex items-center'>
                                 <svg className='mr-1 w-5 h-5 ' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"> <polygon points="5 3 19 12 5 21 5 3"></polygon> </svg>
                                 Xem Phim
                             </Link>
-                            <button className='bg-slate-200/20 border-2 text-text text-sm px-2 py-2 sm:px-3 flex items-center'>
+                            <button className='add-button-color text-heading text-sm px-2 py-2 sm:px-3 flex items-center'>
                                 <svg className='mr-1 w-5 h-5 ' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" > <line x1="12" y1="2" x2="12" y2="22"></line> <line x1="2" y1="12" x2="22" y2="12"></line> </svg>
                                 Thêm vào Danh sách
                             </button>
@@ -157,7 +157,7 @@ const MovieInfoSection = ({ info, media }) => {
                 <h2 className="md:hidden movie-origin-name">{info.origin_name}</h2>
 
                 <p className="movie-normal-text">Trạng thái :
-                    <span className="text-blue-500 text-lg font-bold"> {info.episode_current}</span>
+                    <span className="movie-primary-text text-lg font-bold"> {info.episode_current}</span>
                 </p>
                 <p className="movie-normal-text">Thời lượng : {info.time}</p>
                 <p className="movie-normal-text">Đạo diễn : {RenderInformationArray(info.director)}</p>
@@ -174,8 +174,8 @@ const MovieInfoSection = ({ info, media }) => {
                 <p className="movie-normal-text">Quốc gia : <span className="movie-primary-text">{info.country[0]['name']}</span></p>
                 <p className="movie-normal-text">Năm sản xuất : <span className="movie-primary-text">{info.year}</span></p>
                 <div className="movie-normal-text">Nội dung :
-                    <p className={`movie-normal-text ${showMore ? '' : 'line-clamp-1'}`} dangerouslySetInnerHTML={{ __html: info.content }} />
-                    <button className="text-blue-500 inline-block underline underline-offset-2" onClick={() => { setShowMore(!showMore) }}>{showMore ? 'Ẩn bớt' : 'Xem thêm'}</button>
+                    <p className={`movie-normal-text mt-1 mb-0  ${showMore ? '' : 'line-clamp-1'}`} dangerouslySetInnerHTML={{ __html: info.content }} />
+                    <button className="text-secondary underline underline-offset-2" onClick={() => { setShowMore(!showMore) }}>{showMore ? 'Ẩn bớt' : 'Xem thêm'}</button>
                 </div>
 
 

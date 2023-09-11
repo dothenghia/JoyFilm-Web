@@ -4,20 +4,23 @@ export default {
     content: [
         "./index.html",
         "./src/**/*.{js,ts,jsx,tsx}",
-        'node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}'
     ],
     theme: {
         extend: {
             colors: {
                 'primary': '#e50914', // 229 9 20
+                'primary-hv': '#ab0009',
+                'secondary': '#0ea5e9',
 
-                'background': '#05151e', // 5 21 30
-                'card-bg': '#f7f7f7',
+                'background': '#1a1a1a', // 
+                'section-bg': '#262525',
+
                 'border': '#DEE7F5',
+                'divider': '#6f6f6f',
 
                 'heading': '#F4F4F4',
-                'subheading': '#D6D6D6',
-                'text': '#FAFAFA',
+                'subheading': '#9f9f9f',
+                'text': '#e2e8f0',
             },
         },
 

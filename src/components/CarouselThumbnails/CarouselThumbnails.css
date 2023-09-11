@@ -17,7 +17,7 @@
     padding-left: 24px;
     text-align: left;
     width: 100%;
-    background: linear-gradient(0deg, rgba(5, 21, 30, 1) 0%, rgba(5, 21, 30, 0) 100%);
+    background: linear-gradient(0deg, rgba(26, 26, 26, 1) 0%, rgba(26, 26, 26, 0) 100%);
 }
 
 
@@ -26,7 +26,7 @@
     width: 100%;
     margin: 0;
     transform: translateY(-50%);
-    background: linear-gradient(0deg, rgba(5, 21, 30, 1) 50%, rgba(5, 21, 30, 0) 100%);
+    background: linear-gradient(0deg, rgba(26, 26, 26, 1) 50%, rgba(26, 26, 26, 0) 100%);
     z-index: 20;
 }
 
