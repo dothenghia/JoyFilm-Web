@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* Slider */
 .carousel .slider-wrapper {
     aspect-ratio: 16 / 6.8;
@@ -31,10 +35,8 @@
 }
 
 .thumbs.animated {
+    @apply container xl:max-w-6xl mx-auto px-6;
     display: flex;
-    max-width: 1280px;
-    margin: auto;
-    padding: 0 20px;
     justify-content: space-between;
     z-index: 20;
 }
@@ -74,7 +76,8 @@
 
     .carousel-texts {
         bottom: 0;
-        padding-left: 0;
+        padding-left: 20px;
+        padding-right: 20px;
         padding-bottom: 20px;
         padding-top: 30px;
         display: flex;
@@ -96,6 +99,8 @@
     .carousel-texts {
         padding-bottom: 9%;
         padding-top: 5%;
+        padding-left: calc((100% - 768px) / 2 + 24px);
+        padding-right: calc((100% - 768px) / 2 + 24px);
     }
 
     .carousel .thumbs-wrapper .thumb {
@@ -103,9 +108,16 @@
     }
 
 }
+@media only screen and (min-width : 1024px) and (max-width : 1279px) {
+    .carousel-texts {
+        padding-left: calc((100% - 1024px) / 2 + 24px);
+        padding-right: calc((100% - 1024px) / 2 + 24px);
+    }
+}
 
 @media only screen and (min-width : 1280px) {
     .carousel-texts {
-        padding-left: calc((100% - 1280px) / 2 + 22px);
+        padding-left: calc((100% - 1152px) / 2 + 24px);
+        padding-right: calc((100% - 1152px) / 2 + 24px);
     }
 }

@@ -7,7 +7,7 @@ import thumbnail4 from '../../assets/thumbnails/carousel4.jpg'
 import { Link } from 'react-router-dom'
 import { Carousel } from 'react-responsive-carousel'
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
-import './CarouselThumbnails.css'
+import './CarouselThumbnails.scss'
 
 const slideItems = [
     {
@@ -54,7 +54,9 @@ const CarouselThumbnails = () => {
                 autoPlay={true}
                 dynamicHeight={false}
                 infiniteLoop={true}
-                thumbWidth='20%'
+                thumbWidth='23%'
+                transitionTime={800}
+                interval={4000}
             >
                 {
                     slideItems.map((item) => (
@@ -71,14 +73,18 @@ const CarouselThumbnails = () => {
                                 {/* ------ 'Play' Button & 'Add to Watch List' Button ------ */}
                                 <div className='flex space-x-3 sm:space-x-4 md:space-x-6 mt-2 md:mt-3'>
                                     <Link to={`/phim/${item.slug}`}
-                                        className='play-button-color text-heading text-sm sm:text-lg px-2 py-2 sm:px-3 md:px-4 md:py-3  md:text-lg flex items-center'>
+                                        className='play-button-color text-heading
+                                                text-sm min-[896px]:text-base min-[945px]:text-lg
+                                                px-2 py-2 sm:px-3 md:px-4 md:py-3 flex items-center'>
                                         <svg className='mr-1 w-5 h-5 '
                                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                                             <polygon points="5 3 19 12 5 21 5 3"></polygon>
                                         </svg>
                                         Xem Phim
                                     </Link>
-                                    <button className='add-button-color text-heading text-sm sm:text-lg px-2 py-2 sm:px-3 md:px-4 md:py-3  md:text-lg flex items-center'>
+                                    <button className='add-button-color text-heading
+                                                    text-sm min-[896px]:text-base min-[945px]:text-lg
+                                                    px-2 py-2 sm:px-3 md:px-4 md:py-3 flex items-center'>
                                         <svg className='mr-1 w-5 h-5 '
                                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" >
                                             <line x1="12" y1="2" x2="12" y2="22"></line>

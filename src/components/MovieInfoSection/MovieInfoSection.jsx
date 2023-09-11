@@ -92,12 +92,15 @@ const MovieInfoSection = ({ info, media }) => {
                 <div className="absolute z-10 top-0 left-0 h-full w-full">
                     <div className="h-full section-container-no-py flex flex-col md:flex-row justify-center items-center">
                         {/* ------ Image Thumnail ------ */}
-                        <div className="h-[90%] md:h-full aspect-[9/16] pb-4 md:pb-0 pt-16 md:pt-[74px] lg:pt-20 xl:pb-14 flex justify-center md:justify-end">
+                        <div className="h-[90%] md:h-full aspect-[9/16]
+                                    pb-4 md:pb-0 lg:pb-10 xl:pb-20 pt-16 md:pt-[74px] lg:pt-20
+                                    flex justify-center md:justify-end">
                             <img src={info.thumb_url} className='h-full rounded-2xl object-cover' />
                         </div>
 
                         {/* ------ Brief Information for Medium & Large screen------ */}
-                        <div className="hidden md:block self-end xl:pb-14 pl-8 lg:pr-2 xl:pr-7">
+                        <div className="hidden md:block self-end 
+                                    md:pb-0 lg:pb-10 xl:pb-20 pl-8 lg:pr-2 xl:pr-7">
                             <h1 className="movie-name">{info.name}</h1>
                             <h2 className="movie-origin-name">{info.origin_name}</h2>
                             <p className="movie-normal-text">{info.time}</p>
@@ -112,13 +115,13 @@ const MovieInfoSection = ({ info, media }) => {
                                 <Link to={`?sv=0&tap=0`}
 
                                     className='play-button-color text-heading 
-                                    text-sm min-[896px]:text-base min-[945px]:text-lg lg:text-xl
+                                    text-sm min-[896px]:text-base min-[945px]:text-lg
                                     px-2 py-2 sm:px-3 md:px-4 md:py-2 flex items-center'>
                                     <svg className='mr-1 w-5 h-5 ' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"> <polygon points="5 3 19 12 5 21 5 3"></polygon> </svg>
                                     Xem Phim
                                 </Link>
                                 <button className='add-button-color text-heading 
-                                    text-sm min-[896px]:text-base min-[945px]:text-lg lg:text-xl
+                                    text-sm min-[896px]:text-base min-[945px]:text-lg
                                     px-2 py-2 sm:px-3 md:px-4 md:py-2 flex items-center'>
                                     <svg className='mr-1 w-5 h-5 ' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" > <line x1="12" y1="2" x2="12" y2="22"></line> <line x1="2" y1="12" x2="22" y2="12"></line> </svg>
                                     Thêm vào Danh sách
@@ -146,7 +149,7 @@ const MovieInfoSection = ({ info, media }) => {
                 </div>
             </div>
 
-            <div className='h-28 md:h-40 z-0 -translate-y-[99%] bg-gradient-to-t from-background from-0% to-transparent to-100%'></div>
+            <div className='h-28 md:h-32 xl:h-40 z-0 -translate-y-[99%] bg-gradient-to-t from-background from-0% to-transparent to-100%'></div>
 
 
             {/* ------ Detail Information ------ */}

@@ -20,24 +20,24 @@ const Header = () => {
             {/* ------ Header Navigation bar ------ */}
             <nav className="bg-transparent fixed w-full z-20 top-0 left-0 shadow-[inset_0px_14px_20px_-10px_rgba(0,0,0,0.7)]" >
                 <BlurBox>
-                    <div className="max-w-screen-xl mx-auto flex flex-wrap items-center justify-between">
+                    <div className="section-container-no-py flex flex-wrap items-center justify-between">
 
                         {/* ------ Header Left Content ------ */}
                         <div className="flex">
 
                             {/* ------ Logo ------ */}
-                            <Link to="/" className="flex items-center py-3 px-4">
+                            <Link to="/" className="flex items-center py-3">
                                 <img src={logo} className="h-8 mr-2" alt="Logo" />
                                 <img src={joyfilm} className="h-7" alt="JoyFilm" />
                             </Link>
 
                             {/* ------ Navigation Links ------ */}
-                            <div className="hidden md:flex flex-row">
+                            <div className="hidden lg:flex flex-row">
                                 <Link to="/phim-moi" className="header-link">Phim mới</Link>
                                 <Link to="/chieu-rap" className="header-link">Phim chiếu rạp</Link>
-                                <Link to="/phim-le" className="header-link hidden min-[787px]:block">Phim lẻ</Link>
-                                <Link to="/phim-bo" className="header-link hidden min-[880px]:block">Phim bộ</Link>
-                                <Link to="/hoat-hinh" className="header-link hidden min-[990px]:block">Hoạt hình</Link>
+                                <Link to="/phim-le" className="header-link">Phim lẻ</Link>
+                                <Link to="/phim-bo" className="header-link">Phim bộ</Link>
+                                <Link to="/hoat-hinh" className="header-link">Hoạt hình</Link>
                             </div>
 
                         </div>
@@ -47,7 +47,7 @@ const Header = () => {
                         <div className="flex">
 
                             {/* ------ Seach Input ------ */}
-                            <div className="relative hidden md:flex mr-5">
+                            <div className="relative hidden lg:flex">
                                 <Link
                                     to={`/tim-kiem?name=${searchInput}`}
                                     className="absolute inset-y-0 right-0 flex items-center px-3">
@@ -70,7 +70,8 @@ const Header = () => {
                             <button data-collapse-toggle="navbar-search" type="button"
                                 aria-controls="navbar-search" aria-expanded="false"
                                 onClick={toggleNavbar}
-                                className="inline-flex rounded-lg md:hidden items-center mr-4 p-2 w-10 h-10 justify-center text-sm text-heading border-[3px] hover:bg-gradient-to-r from-red-500 to-pink-500" >
+                                className="inline-flex rounded-lg lg:hidden items-center p-2 w-10 h-10 justify-center
+                                text-sm text-heading border-[2px] hover:bg-gradient-to-br from-cyan-500 to-indigo-500" >
                                 <span className="sr-only">Open main menu</span>
                                 <svg className="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
                                     <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 1h15M1 7h15M1 13h15" />
@@ -81,10 +82,10 @@ const Header = () => {
 
                         {/* ------ Header Responsive Content when click the Hamburger Button ------ */}
                         <div id="navbar-search"
-                            className="items-center justify-between w-full hidden md:hidden md:w-auto md:order-1">
+                            className="items-center justify-between w-full hidden lg:hidden lg:w-auto lg:order-1">
 
                             {/* ------ Search Input ------ */}
-                            <div className="ml-5 mr-3 mt-3 md:hidden flex">
+                            <div className="ml-4 mt-3 lg:hidden flex">
                                 <input type="text"
                                     className="block w-full p-2 pl-4 text-md text-text rounded-lg border-none bg-black/50 placeholder:text-subheading"
                                     placeholder="Tìm kiếm..."
@@ -104,7 +105,7 @@ const Header = () => {
                             </div>
 
                             {/* ------ Navigation Links ------ */}
-                            <div className="font-medium flex flex-col pl-2 md:pl-0 mt-4 mb-2 md:mb-0 md:flex-row md:space-x-0 md:mt-0">
+                            <div className="font-medium flex flex-col lg:pl-0 mt-4 mb-2 lg:mb-0 lg:flex-row lg:space-x-0 lg:mt-0">
                                 <Link to="/phim-moi" className="header-link">Phim mới</Link>
                                 <Link to="/chieu-rap" className="header-link">Phim chiếu rạp</Link>
                                 <Link to="/phim-le" className="header-link">Phim lẻ</Link>
