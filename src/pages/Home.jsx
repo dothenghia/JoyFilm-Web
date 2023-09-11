@@ -90,7 +90,7 @@ const Home = () => {
 
 
             {/* ------ CARTOON Movies Section ------ */}
-            <div className="section-container">
+            <div className="section-container pb-10">
                 <Link to='/hoat-hinh/1' className="section-title-link">Hoạt hình</Link>
                 {movies && movies.cartoonMovies && <MovieSlide movies={movies.cartoonMovies} />}
                 <div className="text-right">
