@@ -20,7 +20,7 @@
 
     /* [Movie] Movie Grid */
     .movies-grid {
-        @apply grid gap-y-3 grid-cols-2 md:grid-cols-4 lg:grid-cols-6 -mx-2 min-[400px]:-mx-3;
+        @apply grid gap-y-3 grid-cols-2 md:grid-cols-4 lg:grid-cols-6 -mx-2 md:-mx-3;
     }
     /* Play Button & Add Button */
     .play-button-color {
@@ -31,6 +31,9 @@
     }
 
     
+    .page-container-0topside {
+        @apply bg-background h-fit min-h-screen pb-16 pt-16;
+    }
     /* [Page] Section Container */
     .section-container {
         @apply container xl:max-w-6xl mx-auto px-6 pt-5; 

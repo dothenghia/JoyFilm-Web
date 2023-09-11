@@ -39,7 +39,7 @@ const Search = () => {
     return (
         <div id="search" className="bg-background h-fit min-h-screen">
             <div className="section-container pt-20">
-                <h1 className="section-title-no-up"> Tìm kiếm : "{name}"</h1>
+                <h1 className="section-title-no-up">Tìm kiếm : "{name}"</h1>
 
                 <div className="relative flex mt-4">
                     <Link

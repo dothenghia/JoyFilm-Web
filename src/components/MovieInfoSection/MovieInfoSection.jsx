@@ -149,11 +149,11 @@ const MovieInfoSection = ({ info, media }) => {
                 </div>
             </div>
 
-            <div className='h-28 md:h-32 xl:h-40 z-0 -translate-y-[99%] bg-gradient-to-t from-background from-0% to-transparent to-100%'></div>
+            <div className='h-28 lg:h-32 xl:h-40 z-0 -translate-y-[99%] bg-gradient-to-t from-background from-0% to-transparent to-100%'></div>
 
 
             {/* ------ Detail Information ------ */}
-            <div className="section-container px-8 pb-20 -mt-[86px] md:-mt-24 xl:-mt-40">
+            <div className="section-container px-8 pb-20 -mt-[86px] lg:-mt-32 xl:-mt-40">
                 <h1 className='hidden md:block section-title mb-1 min-[945px]:mb-2'>Thông tin phim</h1>
 
                 <h1 className="md:hidden movie-name">{info.name}</h1>

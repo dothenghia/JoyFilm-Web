@@ -33,11 +33,11 @@ const Header = () => {
 
                             {/* ------ Navigation Links ------ */}
                             <div className="hidden lg:flex flex-row">
-                                <Link to="/phim-moi" className="header-link">Phim mới</Link>
-                                <Link to="/chieu-rap" className="header-link">Phim chiếu rạp</Link>
-                                <Link to="/phim-le" className="header-link">Phim lẻ</Link>
-                                <Link to="/phim-bo" className="header-link">Phim bộ</Link>
-                                <Link to="/hoat-hinh" className="header-link">Hoạt hình</Link>
+                                <Link to="/phim-moi/1" className="header-link">Phim mới</Link>
+                                <Link to="/chieu-rap/1" className="header-link">Phim chiếu rạp</Link>
+                                <Link to="/phim-le/1" className="header-link">Phim lẻ</Link>
+                                <Link to="/phim-bo/1" className="header-link">Phim bộ</Link>
+                                <Link to="/hoat-hinh/1" className="header-link">Hoạt hình</Link>
                             </div>
 
                         </div>
@@ -107,11 +107,11 @@ const Header = () => {
 
                             {/* ------ Navigation Links ------ */}
                             <div className="font-medium flex flex-col lg:pl-0 mt-4 mb-2 lg:mb-0 lg:flex-row lg:space-x-0 lg:mt-0">
-                                <Link to="/phim-moi" className="header-link">Phim mới</Link>
-                                <Link to="/chieu-rap" className="header-link">Phim chiếu rạp</Link>
-                                <Link to="/phim-le" className="header-link">Phim lẻ</Link>
-                                <Link to="/phim-bo" className="header-link">Phim bộ</Link>
-                                <Link to="/hoat-hinh" className="header-link">Hoạt hình</Link>
+                                <Link to="/phim-moi/1" className="header-link">Phim mới</Link>
+                                <Link to="/chieu-rap/1" className="header-link">Phim chiếu rạp</Link>
+                                <Link to="/phim-le/1" className="header-link">Phim lẻ</Link>
+                                <Link to="/phim-bo/1" className="header-link">Phim bộ</Link>
+                                <Link to="/hoat-hinh/1" className="header-link">Hoạt hình</Link>
                             </div>
                         </div>
 

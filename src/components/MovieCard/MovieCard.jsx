@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const MovieCard = ({ movie }) => {
     return (
-        <div className='w-full bg-transparent px-2 min-[400px]:px-3 lg:px-4'>
+        <div className='w-full bg-transparent px-2 md:px-3'>
             
             {/* ------ Movie Card container ------ */}
             <Link to={`/phim/${movie.slug}`} className="group">

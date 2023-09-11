@@ -23,11 +23,11 @@ export default function App() {
 
                     <Route path="tim-kiem" element={<Search />} />
 
-                    <Route path="phim-moi" element={<New />} />
-                    <Route path="chieu-rap" element={<Theater />} />
-                    <Route path="phim-le" element={<Single />} />
-                    <Route path="phim-bo" element={<Series />} />
-                    <Route path="hoat-hinh" element={<Cartoon />} />
+                    <Route path="phim-moi/:page" element={<New />} />
+                    <Route path="chieu-rap/:page" element={<Theater />} />
+                    <Route path="phim-le/:page" element={<Single />} />
+                    <Route path="phim-bo/:page" element={<Series />} />
+                    <Route path="hoat-hinh/:page" element={<Cartoon />} />
 
                     <Route path="phim/:slug" element={<Movie />} />
 
