@@ -153,7 +153,7 @@ const MovieInfoSection = ({ info, media }) => {
 
 
             {/* ------ Detail Information ------ */}
-            <div className="section-container px-8 pb-20 -mt-28 md:-mt-36 xl:-mt-44">
+            <div className="section-container px-8 pb-20 -mt-[86px] md:-mt-24 xl:-mt-40">
                 <h1 className='hidden md:block section-title mb-1 min-[945px]:mb-2'>Thông tin phim</h1>
 
                 <h1 className="md:hidden movie-name">{info.name}</h1>

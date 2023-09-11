@@ -19,3 +19,7 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
+
+.slick-list {
+    padding: 0 0 0 0 !important;
+}

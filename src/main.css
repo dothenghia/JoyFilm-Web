@@ -20,7 +20,7 @@
 
     /* [Movie] Movie Grid */
     .movies-grid {
-        @apply grid gap-y-3 grid-cols-2 md:grid-cols-4 lg:grid-cols-6 -mx-2 min-[400px]:-mx-3 lg:-mx-4;
+        @apply grid gap-y-3 grid-cols-2 md:grid-cols-4 lg:grid-cols-6 -mx-2 min-[400px]:-mx-3;
     }
     /* Play Button & Add Button */
     .play-button-color {
@@ -56,7 +56,7 @@
     }
     /* [Page] Section Divider */
     .section-divider {
-        @apply mt-4 border-b-2 border-divider;
+        @apply mt-6 border-b-2 border-divider;
     }
 
 
