@@ -1,16 +1,16 @@
 import { Link } from "react-router-dom";
 
-
 const MovieCard = ({ movie }) => {
     return (
         <div className='w-full bg-transparent px-2 md:px-3'>
-            
+
             {/* ------ Movie Card container ------ */}
             <Link to={`/phim/${movie.slug}`} className="group">
 
                 {/* ------ Thumbnail wrapper ------ */}
                 <div className="overflow-hidden rounded-xl lg:rounded-2xl relative">
                     <img src={movie.thumb_url}
+                        loading="eager"
                         className="aspect-[9/13.5] group-hover:blur-sm group-hover:brightness-50
                                 scale-100 group-hover:scale-125 ease-in duration-200" />
 
@@ -23,10 +23,10 @@ const MovieCard = ({ movie }) => {
 
                 {/* ------ Title wrapper ------ */}
                 <div className="h-20 mt-2">
-                    <h2 className="text-heading line-clamp-2 text-base font-semibold mb-[6px]">
+                    <h2 className="text-heading px-1 line-clamp-2 text-base font-medium mb-[6px]">
                         {movie.name}
                     </h2>
-                    <p className="text-subheading line-clamp-1 text-sm">
+                    <p className="text-subheading px-1 line-clamp-1 text-sm">
                         {movie.origin_name}
                     </p>
                 </div>

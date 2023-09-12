@@ -78,14 +78,14 @@ const MovieInfoSection = ({ info, media }) => {
     const [showMore, setShowMore] = useState(false)
 
     return (
-        <div>
+        <>
 
             {/* ------ Thumbnail & Brief Information ------ */}
             <div className="w-full overflow-hidden md:overflow-visible max-h-[500px] md:max-h-none md:aspect-[16/7] relative">
                 {/* ------ Poster Background ------ */}
                 <div className="aspect-[7/11] md:aspect-[16/7]">
-                    <img src={info.poster_url} className='hidden md:block w-full h-full object-cover brightness-[25%]' />
-                    <img src={info.thumb_url} className='md:hidden w-full h-full object-cover blur-sm brightness-[50%] -translate-y-[1/5]' />
+                    <img src={info.poster_url} loading='eager' className='hidden md:block w-full h-full object-cover brightness-[25%]' />
+                    <img src={info.thumb_url} loading='eager' className='md:hidden w-full h-full object-cover blur-sm brightness-[50%] -translate-y-[1/5]' />
                 </div>
 
                 {/* ------ Information Container ------ */}
@@ -95,7 +95,7 @@ const MovieInfoSection = ({ info, media }) => {
                         <div className="h-[90%] md:h-full aspect-[9/16]
                                     pb-4 md:pb-0 lg:pb-10 xl:pb-20 pt-16 md:pt-[74px] lg:pt-20
                                     flex justify-center md:justify-end">
-                            <img src={info.thumb_url} className='h-full rounded-2xl object-cover' />
+                            <img src={info.thumb_url} loading='eager' className='h-full rounded-2xl object-cover' />
                         </div>
 
                         {/* ------ Brief Information for Medium & Large screen------ */}
@@ -198,7 +198,7 @@ const MovieInfoSection = ({ info, media }) => {
             </div>
 
 
-        </div>
+        </>
     );
 };
 

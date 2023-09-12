@@ -1,8 +1,9 @@
-import { useEffect, useState } from "react";
+import { lazy, useEffect, useState, Suspense } from "react";
 import { useParams, useSearchParams } from "react-router-dom";
 import Controller from "../controllers/controller";
+
 import MovieInfoSection from '../components/MovieInfoSection/MovieInfoSection'
-import MovieMediaSection from '../components/MovieMediaSection/MovieMediaSection'
+const MovieMediaSection = lazy(() => import('../components/MovieMediaSection/MovieMediaSection'));
 
 const Movie = () => {
     let { slug } = useParams()
@@ -33,7 +34,9 @@ const Movie = () => {
             {movie && !tap && !sv && <MovieInfoSection info={movie.movie} media={movie.episodes} />}
 
             {/* ------ Media Section ------ */}
-            {movie && tap && sv && <MovieMediaSection info={movie.movie} media={movie.episodes} epIndex={tap} svIndex={sv} />}
+            <Suspense fallback={<div className="w-screen h-screen bg-background flex justify-center items-center">Loading...</div>}>
+                {movie && tap && sv && <MovieMediaSection info={movie.movie} media={movie.episodes} epIndex={tap} svIndex={sv} />}
+            </Suspense>
 
         </div>
     );

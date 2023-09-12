@@ -4,6 +4,8 @@ import Controller from "../controllers/controller";
 import CarouselThumbnails from '../components/CarouselThumbnails/CarouselThumbnails'
 import MovieSlide from '../components/MovieSlide/MovieSlide'
 import { Link } from "react-router-dom";
+import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css'
 
 const Home = () => {
     // ------ Data State
@@ -32,7 +34,19 @@ const Home = () => {
             {/* ------ NEW Movies Section ------ */}
             <div className="section-container mt-3 md:-mt-6 lg:-mt-8">
                 <Link to='/phim-moi/1' className="section-title-link">Phim mới cập nhật</Link>
-                {movies && movies.newMovies && <MovieSlide movies={movies.newMovies} />}
+                {(!movies || !movies.newMovies) ? (
+                    // Sử dụng Skeleton loading nếu dữ liệu chưa tải xong
+                    <SkeletonTheme color="#202020" highlightColor="#444">
+                        <p>
+                            <Skeleton count={1} className="h-[250px] sm:h-[255px] md:h-[220px] min-[896px]:h-[170px] lg:h-[200px] xl:h-[230px]" />
+                            <Skeleton count={1} className="h-11 mt-2" />
+                            <Skeleton count={1} className="h-4 mt-1" />
+                        </p>
+                    </SkeletonTheme>
+                ) : (
+                    // Hiển thị danh sách phim nếu dữ liệu đã tải xong
+                    <MovieSlide movies={movies.newMovies} />
+                )}
                 <div className="section-divider"></div>
             </div>
 
@@ -41,7 +55,17 @@ const Home = () => {
             {/* ------ THEATER Movies Section ------ */}
             <div className="section-container">
                 <Link to='/chieu-rap/1' className="section-title-link">Phim chiếu rạp</Link>
-                {movies && movies.theaterMovies && <MovieSlide movies={movies.theaterMovies} />}
+                {(!movies || !movies.theaterMovies) ? (
+                    <SkeletonTheme color="#202020" highlightColor="#444">
+                        <p>
+                            <Skeleton count={1} className="h-[250px] sm:h-[255px] md:h-[220px] min-[896px]:h-[170px] lg:h-[200px] xl:h-[230px]" />
+                            <Skeleton count={1} className="h-12 mt-2" />
+                            <Skeleton count={1} className="h-5" />
+                        </p>
+                    </SkeletonTheme>
+                ) : (
+                    <MovieSlide movies={movies.theaterMovies} />
+                )}
                 <div className="section-divider"></div>
             </div>
 
@@ -50,7 +74,17 @@ const Home = () => {
             {/* ------ SINGLE Movies Section ------ */}
             <div className="section-container">
                 <Link to='/phim-le/1' className="section-title-link">Phim lẻ</Link>
-                {movies && movies.singleMovies && <MovieSlide movies={movies.singleMovies} />}
+                {(!movies || !movies.singleMovies) ? (
+                    <SkeletonTheme color="#202020" highlightColor="#444">
+                        <p>
+                            <Skeleton count={1} className="h-[250px] sm:h-[255px] md:h-[220px] min-[896px]:h-[170px] lg:h-[200px] xl:h-[230px]" />
+                            <Skeleton count={1} className="h-12 mt-2" />
+                            <Skeleton count={1} className="h-5" />
+                        </p>
+                    </SkeletonTheme>
+                ) : (
+                    <MovieSlide movies={movies.singleMovies} />
+                )}
                 <div className="section-divider"></div>
             </div>
 
@@ -59,7 +93,17 @@ const Home = () => {
             {/* ------ SERIES Movies Section ------ */}
             <div className="section-container">
                 <Link to='/phim-bo/1' className="section-title-link">Phim bộ</Link>
-                {movies && movies.seriesMovies && <MovieSlide movies={movies.seriesMovies} />}
+                {(!movies || !movies.seriesMovies) ? (
+                    <SkeletonTheme color="#202020" highlightColor="#444">
+                        <p>
+                            <Skeleton count={1} className="h-[250px] sm:h-[255px] md:h-[220px] min-[896px]:h-[170px] lg:h-[200px] xl:h-[230px]" />
+                            <Skeleton count={1} className="h-12 mt-2" />
+                            <Skeleton count={1} className="h-5" />
+                        </p>
+                    </SkeletonTheme>
+                ) : (
+                    <MovieSlide movies={movies.seriesMovies} />
+                )}
                 <div className="section-divider"></div>
             </div>
 
@@ -68,7 +112,17 @@ const Home = () => {
             {/* ------ CARTOON Movies Section ------ */}
             <div className="section-container">
                 <Link to='/hoat-hinh/1' className="section-title-link">Hoạt hình</Link>
-                {movies && movies.cartoonMovies && <MovieSlide movies={movies.cartoonMovies} />}
+                {(!movies || !movies.cartoonMovies) ? (
+                    <SkeletonTheme color="#202020" highlightColor="#444">
+                        <p>
+                            <Skeleton count={1} className="h-[250px] sm:h-[255px] md:h-[220px] min-[896px]:h-[170px] lg:h-[200px] xl:h-[230px]" />
+                            <Skeleton count={1} className="h-12 mt-2" />
+                            <Skeleton count={1} className="h-5" />
+                        </p>
+                    </SkeletonTheme>
+                ) : (
+                    <MovieSlide movies={movies.cartoonMovies} />
+                )}
             </div>
 
         </div>
