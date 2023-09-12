@@ -7,7 +7,7 @@ const Layout = () => {
     console.log('[Layout] Render')
 
     return (
-        <div id="layout">
+        <>
 
             {/* ------ Header Navigation Bar ------ */}
             <Header />
@@ -17,7 +17,7 @@ const Layout = () => {
 
             {/* ------ Footer ------ */}
             <Footer />
-        </div>
+        </>
     );
 };
 

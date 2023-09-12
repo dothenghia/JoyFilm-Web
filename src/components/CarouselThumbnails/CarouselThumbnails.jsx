@@ -44,7 +44,7 @@ const slideItems = [
 const CarouselThumbnails = () => {
 
     return (
-        <div id='carousel-thumbnails'>
+        <>
 
             {/* ------ Carousel wrapper ------ */}
             <Carousel showArrows={false}
@@ -98,7 +98,7 @@ const CarouselThumbnails = () => {
                     ))
                 }
             </Carousel>
-        </div>
+        </>
 
 
     );
