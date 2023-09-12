@@ -1,17 +1,18 @@
+import { Suspense, lazy } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Layout from "./pages/Layout";
 
 import Home from "./pages/Home";
-import Search from "./pages/Search";
-import New from "./pages/New.jsx";
-import Theater from "./pages/Theater";
-import Single from "./pages/Single";
-import Series from "./pages/Series";
-import Cartoon from "./pages/Cartoon";
+const Search = lazy(() => import("./pages/Search"));
+const New = lazy(() => import("./pages/New"));
+const Theater = lazy(() => import("./pages/Theater"));
+const Single = lazy(() => import("./pages/Single"));
+const Series = lazy(() => import("./pages/Series"));
+const Cartoon = lazy(() => import("./pages/Cartoon"));
 
 import Movie from "./pages/Movie";
-import NotFound from "./pages/NotFound";
+const NotFound = lazy(() => import("./pages/NotFound"));
 
 export default function App() {
     return (
@@ -19,22 +20,73 @@ export default function App() {
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<Layout />}>
+
                     <Route index element={<Home />} />
 
-                    <Route path="tim-kiem" element={<Search />} />
+                    <Route path="tim-kiem"
+                        element={
+                            <Suspense fallback={<div className="w-screen h-screen bg-background flex justify-center items-center">Loading...</div>}>
+                                <Search />
+                            </Suspense>
+                        }
 
-                    <Route path="phim-moi/:page" element={<New />} />
-                    <Route path="chieu-rap/:page" element={<Theater />} />
-                    <Route path="phim-le/:page" element={<Single />} />
-                    <Route path="phim-bo/:page" element={<Series />} />
-                    <Route path="hoat-hinh/:page" element={<Cartoon />} />
+                    />
+
+                    <Route path="phim-moi/:page"
+                        element={
+                            <Suspense fallback={<div className="w-screen h-screen bg-background flex justify-center items-center">Loading...</div>}>
+                                <New />
+                            </Suspense>
+                        }
+
+                    />
+                    <Route path="chieu-rap/:page"
+                        element={
+                            <Suspense fallback={<div className="w-screen h-screen bg-background flex justify-center items-center">Loading...</div>}>
+                                <Theater />
+                            </Suspense>
+                        }
+
+                    />
+                    <Route path="phim-le/:page"
+                        element={
+                            <Suspense fallback={<div className="w-screen h-screen bg-background flex justify-center items-center">Loading...</div>}>
+                                <Single />
+                            </Suspense>
+                        }
+
+                    />
+                    <Route path="phim-bo/:page"
+                        element={
+                            <Suspense fallback={<div className="w-screen h-screen bg-background flex justify-center items-center">Loading...</div>}>
+                                <Series />
+                            </Suspense>
+                        }
+
+                    />
+                    <Route path="hoat-hinh/:page"
+                        element={
+                            <Suspense fallback={<div className="w-screen h-screen bg-background flex justify-center items-center">Loading...</div>}>
+                                <Cartoon />
+                            </Suspense>
+                        }
+
+                    />
 
                     <Route path="phim/:slug" element={<Movie />} />
 
-                    <Route path="*" element={<NotFound />} />
+                    <Route path="*"
+                        element={
+                            <Suspense fallback={<div className="w-screen h-screen bg-background flex justify-center items-center">Loading...</div>}>
+                                <NotFound />
+                            </Suspense>
+                        }
+                    />
+
                 </Route>
             </Routes>
-        </BrowserRouter>
+
+        </BrowserRouter >
     );
 }
 

@@ -22,7 +22,7 @@ const MovieSlide = ({ movies }) => {
     // Setting for Movies Slide
     const settings = {
         dots: false,
-        lazyLoad: true,
+        // lazyLoad: true,
         arrows: false,
         infinite: true,
         draggable: true,
@@ -35,7 +35,7 @@ const MovieSlide = ({ movies }) => {
         initialSlide: 0,
         responsive: [
             {
-                breakpoint: 1600,
+                breakpoint: 2000,
                 settings: {
                     slidesToShow: 6,
                 }
