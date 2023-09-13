@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import BlurBox from "../BlurBox/BlurBox";
+import useTitle from '../../hooks/useTitle'
 
 const EpisodeButtons = ({ media, epIndex, svIndex }) => {
     return (
@@ -41,6 +42,8 @@ const ServerTabs = ({ media, svIndex }) => {
 
 const MovieMediaSection = ({ info, media, epIndex, svIndex }) => {
     console.log('[Movie] Media Render')
+
+    useTitle(`${info.name} - Tập ${media[svIndex].server_data[epIndex].name || ""} | JoyFilm`)
 
     return (
         <div className="section-container pt-16 pb-32">

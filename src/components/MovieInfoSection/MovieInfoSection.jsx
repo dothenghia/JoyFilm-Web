@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import BlurBox from '../BlurBox/BlurBox'
+import useTitle from '../../hooks/useTitle'
 
 const convertYouTubeUrl = (inputUrl) => {
     if (!inputUrl.includes("watch?v=")) {
@@ -75,6 +76,8 @@ const RenderInformationArray = (array) => {
 const MovieInfoSection = ({ info, media }) => {
     console.log('[Movie] Info Render')
 
+    useTitle(`${info.name} | JoyFilm`)
+
     const [showMore, setShowMore] = useState(false)
 
     return (
@@ -134,7 +137,7 @@ const MovieInfoSection = ({ info, media }) => {
                         {/* ------ 'Xem' Button & 'Them vao danh sach' Button for Small screen ------ */}
                         <div className='md:hidden flex space-x-4 pb-2'>
                             <Link to={`?sv=0&tap=0`}
-                            
+
                                 className='bg-primary text-heading text-sm px-2 py-2 sm:px-3 flex items-center'>
                                 <svg className='mr-1 w-5 h-5 ' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"> <polygon points="5 3 19 12 5 21 5 3"></polygon> </svg>
                                 Xem Phim
@@ -186,12 +189,12 @@ const MovieInfoSection = ({ info, media }) => {
 
                 {
                     (info.trailer_url == "") ?
-                    (
-                        <p className="movie-normal-text">Không tìm thấy Trailer cho phim này</p>
-                    ) :
-                    (
-                        <TrailerFrame url={info.trailer_url} />
-                    )
+                        (
+                            <p className="movie-normal-text">Không tìm thấy Trailer cho phim này</p>
+                        ) :
+                        (
+                            <TrailerFrame url={info.trailer_url} />
+                        )
                 }
 
 

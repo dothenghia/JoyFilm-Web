@@ -3,13 +3,20 @@ import { useNavigate, useSearchParams } from "react-router-dom";
 import MovieCard from "../components/MovieCard/MovieCard";
 import Controller from "../controllers/controller";
 import { Link } from "react-router-dom";
+import useTitle from '../hooks/useTitle'
 
 const Search = () => {
 
     // ------ Data State
     const [searchParams, setSearchParams] = useSearchParams()
     let name = searchParams.get('name')
-    const [searchInput, setSearchInput] = useState(name)
+    const [searchInput, setSearchInput] = useState((name || ""))
+
+    if (!name) {
+        useTitle(`Tìm kiếm | JoyFilm`)
+    } else {
+        useTitle(`Tìm kiếm - "${name}" | JoyFilm`)
+    }
 
     const [movies, setMovies] = useState(null)
     const searchInputDOM = useRef(null)

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Controller from "../controllers/controller";
+import useTitle from '../hooks/useTitle'
 
 import MovieCard from "../components/MovieCard/MovieCard";
 import PageButtons from "../components/PageButtons/PageButtons";
@@ -10,6 +11,7 @@ const Single = () => {
     const [movies, setMovies] = useState(null)
     let { page } = useParams()
 
+    useTitle(`Phim lẻ - Trang ${page} | JoyFilm`)
 
     // ------ Fetching Data
     useEffect(() => {

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Controller from "../controllers/controller";
+import useTitle from '../hooks/useTitle'
 
 import CarouselThumbnails from '../components/CarouselThumbnails/CarouselThumbnails'
 import MovieSlide from '../components/MovieSlide/MovieSlide'
@@ -8,6 +9,8 @@ import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css'
 
 const Home = () => {
+    useTitle('Trang chủ | JoyFilm')
+
     // ------ Data State
     const [movies, setMovies] = useState(null)
 
