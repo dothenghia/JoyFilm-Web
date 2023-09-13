@@ -12,7 +12,7 @@ function SaveProvider({ children }) {
 
     const toggleSaveMovie = (movie) => {
         console.log(movie)
-        const isSaved = saveList.some((savedMovie) => savedMovie.id === movie.id);
+        const isSaved = saveList.some((savedMovie) => savedMovie.name === movie.name);
 
         if (isSaved) {
             // Nếu đã tồn tại, xóa nó khỏi saveList

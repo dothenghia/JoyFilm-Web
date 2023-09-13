@@ -11,6 +11,8 @@ const Single = lazy(() => import("./pages/Single"));
 const Series = lazy(() => import("./pages/Series"));
 const Cartoon = lazy(() => import("./pages/Cartoon"));
 
+const Bookmark = lazy(() => import("./pages/Bookmark"));
+
 import Movie from "./pages/Movie";
 const NotFound = lazy(() => import("./pages/NotFound"));
 
@@ -68,6 +70,14 @@ export default function App() {
                             element={
                                 <Suspense fallback={<div className="w-screen h-screen bg-background flex justify-center items-center">Loading...</div>}>
                                     <Cartoon />
+                                </Suspense>
+                            }
+                        />
+
+                        <Route path="phim-da-luu"
+                            element={
+                                <Suspense fallback={<div className="w-screen h-screen bg-background flex justify-center items-center">Loading...</div>}>
+                                    <Bookmark />
                                 </Suspense>
                             }
                         />

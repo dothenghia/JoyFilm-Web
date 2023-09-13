@@ -9,7 +9,8 @@ const SavedButton = () => {
 
     return (
         <div className="relative group">
-            <Link className="block rounded-full overflow-hidden">
+            <Link to='/phim-da-luu'
+                className="block rounded-full overflow-hidden">
                 <BlurBox>
                     <div className="p-4 group-hover:bg-gradient-to-br from-red-600 to-indigo-500">
                         <img src={bookmark} className="w-5 h-5" alt="Bookmark"/>

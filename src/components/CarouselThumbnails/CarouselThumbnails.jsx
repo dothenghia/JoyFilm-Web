@@ -15,31 +15,35 @@ import { saveContext } from "../../contexts/saveContext";
 const slideItems = [
     {
         id: 2,
-        name: "NGƯỜI KIẾN VÀ CHIẾN BINH ONG: THẾ GIỚI LƯỢNG TỬ",
+        name: "Người Kiến Và Chiến Binh Ong: Thế Giới Lượng Tử",
         original_name: 'Ant-Man and the Wasp: Quantumania',
         slug: "nguoi-kien-va-chien-binh-ong-the-gioi-luong-tu",
         poster_url: thumbnail1,
+        thumb_url: 'https://img.ophim9.cc/uploads/movies/nguoi-kien-va-chien-binh-ong-the-gioi-luong-tu-thumb.jpg',
     },
     {
         id: 3,
-        name: "XỨ SỞ CÁC NGUYÊN TỐ",
+        name: "Xứ Sở Các Nguyên Tố",
         original_name: 'Elemental',
         slug: "xu-so-cac-nguyen-to",
         poster_url: thumbnail2,
+        thumb_url: 'https://img.ophim9.cc/uploads/movies/xu-so-cac-nguyen-to-thumb.jpg',
     },
     {
         id: 4,
-        name: "NGƯỜI NHỆN: DU HÀNH VŨ TRỤ NHỆN",
+        name: "Người Nhện: Du Hành Vũ Trụ Nhện",
         original_name: 'Spider-Man: Across the Spider-Verse',
         slug: "nguoi-nhen-du-hanh-vu-tru-nhen",
         poster_url: thumbnail3,
+        thumb_url: 'https://img.ophim9.cc/uploads/movies/nguoi-nhen-du-hanh-vu-tru-nhen-thumb.jpg',
     },
     {
         id: 6,
-        name: "ANH EM SUPER MARIO",
+        name: "Anh Em Super Mario",
         original_name: 'The Super Mario Bros. Movie',
         slug: "anh-em-super-mario",
         poster_url: thumbnail4,
+        thumb_url: 'https://img.ophim9.cc/uploads/movies/anh-em-super-mario-thumb.jpg',
     }
 
 ]
@@ -76,7 +80,7 @@ const CarouselThumbnails = () => {
                             {/* ------ Carousel Legend Text ------ */}
                             <div className='carousel-texts '>
                                 {/* ------ Title (Name) ------ */}
-                                <h1 className='block text-center md:text-left text-lg sm:text-2xl md:text-3xl font-semibold sm:font-bold text-heading'>{item.name}</h1>
+                                <h1 className='block text-center md:text-left text-lg sm:text-2xl md:text-3xl font-semibold sm:font-bold text-heading uppercase'>{item.name}</h1>
 
                                 {/* ------ 'Play' Button & 'Add to Watch List' Button ------ */}
                                 <div className='flex space-x-3 sm:space-x-4 md:space-x-6 mt-2 md:mt-3'>
