@@ -14,79 +14,79 @@ const Cartoon = lazy(() => import("./pages/Cartoon"));
 import Movie from "./pages/Movie";
 const NotFound = lazy(() => import("./pages/NotFound"));
 
+import { SaveProvider } from '../src/contexts/saveContext.jsx'
+
 export default function App() {
     return (
         // Config router for application
-        <BrowserRouter>
-            <Routes>
-                <Route path="/" element={<Layout />}>
+        <SaveProvider>
 
-                    <Route index element={<Home />} />
+            <BrowserRouter>
 
-                    <Route path="tim-kiem"
-                        element={
-                            <Suspense fallback={<div className="w-screen h-screen bg-background flex justify-center items-center">Loading...</div>}>
-                                <Search />
-                            </Suspense>
-                        }
+                <Routes>
+                    <Route path="/" element={<Layout />}>
 
-                    />
+                        <Route index element={<Home />} />
 
-                    <Route path="phim-moi/:page"
-                        element={
-                            <Suspense fallback={<div className="w-screen h-screen bg-background flex justify-center items-center">Loading...</div>}>
-                                <New />
-                            </Suspense>
-                        }
+                        <Route path="tim-kiem"
+                            element={
+                                <Suspense fallback={<div className="w-screen h-screen bg-background flex justify-center items-center">Loading...</div>}>
+                                    <Search />
+                                </Suspense>
+                            }
+                        />
 
-                    />
-                    <Route path="chieu-rap/:page"
-                        element={
-                            <Suspense fallback={<div className="w-screen h-screen bg-background flex justify-center items-center">Loading...</div>}>
-                                <Theater />
-                            </Suspense>
-                        }
+                        <Route path="phim-moi/:page"
+                            element={
+                                <Suspense fallback={<div className="w-screen h-screen bg-background flex justify-center items-center">Loading...</div>}>
+                                    <New />
+                                </Suspense>
+                            }
+                        />
+                        <Route path="chieu-rap/:page"
+                            element={
+                                <Suspense fallback={<div className="w-screen h-screen bg-background flex justify-center items-center">Loading...</div>}>
+                                    <Theater />
+                                </Suspense>
+                            }
+                        />
+                        <Route path="phim-le/:page"
+                            element={
+                                <Suspense fallback={<div className="w-screen h-screen bg-background flex justify-center items-center">Loading...</div>}>
+                                    <Single />
+                                </Suspense>
+                            }
+                        />
+                        <Route path="phim-bo/:page"
+                            element={
+                                <Suspense fallback={<div className="w-screen h-screen bg-background flex justify-center items-center">Loading...</div>}>
+                                    <Series />
+                                </Suspense>
+                            }
+                        />
+                        <Route path="hoat-hinh/:page"
+                            element={
+                                <Suspense fallback={<div className="w-screen h-screen bg-background flex justify-center items-center">Loading...</div>}>
+                                    <Cartoon />
+                                </Suspense>
+                            }
+                        />
 
-                    />
-                    <Route path="phim-le/:page"
-                        element={
-                            <Suspense fallback={<div className="w-screen h-screen bg-background flex justify-center items-center">Loading...</div>}>
-                                <Single />
-                            </Suspense>
-                        }
+                        <Route path="phim/:slug" element={<Movie />} />
 
-                    />
-                    <Route path="phim-bo/:page"
-                        element={
-                            <Suspense fallback={<div className="w-screen h-screen bg-background flex justify-center items-center">Loading...</div>}>
-                                <Series />
-                            </Suspense>
-                        }
+                        <Route path="*"
+                            element={
+                                <Suspense fallback={<div className="w-screen h-screen bg-background flex justify-center items-center">Loading...</div>}>
+                                    <NotFound />
+                                </Suspense>
+                            }
+                        />
 
-                    />
-                    <Route path="hoat-hinh/:page"
-                        element={
-                            <Suspense fallback={<div className="w-screen h-screen bg-background flex justify-center items-center">Loading...</div>}>
-                                <Cartoon />
-                            </Suspense>
-                        }
+                    </Route>
+                </Routes>
 
-                    />
-
-                    <Route path="phim/:slug" element={<Movie />} />
-
-                    <Route path="*"
-                        element={
-                            <Suspense fallback={<div className="w-screen h-screen bg-background flex justify-center items-center">Loading...</div>}>
-                                <NotFound />
-                            </Suspense>
-                        }
-                    />
-
-                </Route>
-            </Routes>
-
-        </BrowserRouter >
+            </BrowserRouter >
+        </SaveProvider>
     );
 }
 
