@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Controller from "../controllers/controller";
 import useTitle from '../hooks/useTitle'
+import SkeletonGrid from "../components/SkeletonGrid/SkeletonGrid";
 
 import MovieCard from "../components/MovieCard/MovieCard";
 import PageButtons from "../components/PageButtons/PageButtons";
@@ -31,13 +32,24 @@ const Cartoon = () => {
             <div className="section-container">
                 <h1 className="section-title-no-up">Phim hoạt hình - Trang {page}</h1>
 
-                <div className="mt-6 movies-grid">
-                    {
-                        movies && movies.data && movies.data.map((movie, index) => (
-                            <MovieCard key={index} movie={movie} />
-                        ))
-                    }
-                </div>
+                {
+                    (!movies || !movies.data) ?
+                    (
+                        <>
+                            <SkeletonGrid />
+                            <SkeletonGrid />
+                            <SkeletonGrid />
+                            <SkeletonGrid />
+                        </>
+                    ) :
+                    (
+                        <div className="mt-6 movies-grid">
+                            {movies.data.map((movie, index) => (
+                                <MovieCard key={index} movie={movie} />
+                            ))}
+                        </div>
+                    )
+                }
 
                 <div className="mt-6 flex flex-row flex-wrap justify-center">
                     {

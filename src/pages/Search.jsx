@@ -4,6 +4,7 @@ import MovieCard from "../components/MovieCard/MovieCard";
 import Controller from "../controllers/controller";
 import { Link } from "react-router-dom";
 import useTitle from '../hooks/useTitle'
+import SkeletonGrid from "../components/SkeletonGrid/SkeletonGrid";
 
 const Search = () => {
 
@@ -25,6 +26,7 @@ const Search = () => {
     // ------ Fetching Data
     useEffect(() => {
         const fetchData = async () => {
+            setMovies(null)
             let data = await Controller('SEARCHMOVIE', name)
             console.log(data)
             setMovies(data)
@@ -68,13 +70,24 @@ const Search = () => {
                     />
                 </div>
 
-                <div className="mt-6 movies-grid">
-                    {
-                        movies && movies.map((movie, index) => (
-                            <MovieCard key={index} movie={movie} />
-                        ))
-                    }
-                </div>
+                {
+                    (!movies || !movies.data) ?
+                    (
+                        <>
+                            <SkeletonGrid />
+                            <SkeletonGrid />
+                            <SkeletonGrid />
+                            <SkeletonGrid />
+                        </>
+                    ) :
+                    (
+                        <div className="mt-6 movies-grid">
+                            {movies.data.map((movie, index) => (
+                                <MovieCard key={index} movie={movie} />
+                            ))}
+                        </div>
+                    )
+                }
             </div>
         </div>
     );

@@ -68,7 +68,7 @@ const MovieSlide = ({ movies }) => {
     };
 
     return (
-        <div className="relative -ml-4 mt-4">
+        <div className="relative mt-4 -ml-2 md:-ml-[10px]">
         
             {/* Slide Control Buttons */}
             <div className="absolute right-2 -top-10 flex items-center justify-end">

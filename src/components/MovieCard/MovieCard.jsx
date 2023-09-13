@@ -2,13 +2,13 @@ import { Link } from "react-router-dom";
 
 const MovieCard = ({ movie }) => {
     return (
-        <div className='w-full bg-transparent px-2 md:px-3'>
+        <div className='w-full bg-transparent px-2 md:px-[10px]'>
 
             {/* ------ Movie Card container ------ */}
             <Link to={`/phim/${movie.slug}`} className="group">
 
                 {/* ------ Thumbnail wrapper ------ */}
-                <div className="overflow-hidden rounded-xl lg:rounded-2xl relative">
+                <div className="overflow-hidden rounded-lg lg:rounded-xl relative">
                     <img src={movie.thumb_url}
                         loading="eager"
                         className="aspect-[9/13.5] group-hover:blur-sm group-hover:brightness-50
