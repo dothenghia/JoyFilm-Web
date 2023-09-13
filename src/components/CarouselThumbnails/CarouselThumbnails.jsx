@@ -9,6 +9,9 @@ import { Carousel } from 'react-responsive-carousel'
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
 import './CarouselThumbnails.scss'
 
+import { useContext } from "react";
+import { saveContext } from "../../contexts/saveContext";
+
 const slideItems = [
     {
         id: 2,
@@ -42,6 +45,11 @@ const slideItems = [
 ]
 
 const CarouselThumbnails = () => {
+    const context = useContext(saveContext)
+
+    const addToSaveList = (movie) => {
+        context.toggleSaveMovie(movie)
+    }
 
     return (
         <>
@@ -82,7 +90,9 @@ const CarouselThumbnails = () => {
                                         </svg>
                                         Xem Phim
                                     </Link>
-                                    <button className='add-button-color text-heading
+                                    <button
+                                        onClick={() => { addToSaveList(item) }}
+                                        className='add-button-color text-heading
                                                     text-sm min-[896px]:text-base min-[945px]:text-lg
                                                     px-2 py-2 sm:px-3 md:px-4 md:py-3 flex items-center'>
                                         <svg className='mr-1 w-5 h-5 '
