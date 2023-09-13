@@ -18,7 +18,7 @@
     left: 0;
     padding-bottom: 13%;
     padding-top: 5%;
-    padding-left: 24px;
+    padding-left: 28px;
     text-align: left;
     width: 100%;
     background: linear-gradient(0deg, rgba(26, 26, 26, 1) 0%, rgba(26, 26, 26, 0) 100%);
@@ -99,8 +99,8 @@
     .carousel-texts {
         padding-bottom: 9%;
         padding-top: 5%;
-        padding-left: calc((100% - 768px) / 2 + 24px);
-        padding-right: calc((100% - 768px) / 2 + 24px);
+        padding-left: calc((100% - 768px) / 2 + 28px);
+        padding-right: calc((100% - 768px) / 2 + 28px);
     }
 
     .carousel .thumbs-wrapper .thumb {
@@ -110,14 +110,14 @@
 }
 @media only screen and (min-width : 1024px) and (max-width : 1279px) {
     .carousel-texts {
-        padding-left: calc((100% - 1024px) / 2 + 24px);
-        padding-right: calc((100% - 1024px) / 2 + 24px);
+        padding-left: calc((100% - 1024px) / 2 + 28px);
+        padding-right: calc((100% - 1024px) / 2 + 28px);
     }
 }
 
 @media only screen and (min-width : 1280px) {
     .carousel-texts {
-        padding-left: calc((100% - 1152px) / 2 + 24px);
-        padding-right: calc((100% - 1152px) / 2 + 24px);
+        padding-left: calc((100% - 1152px) / 2 + 28px);
+        padding-right: calc((100% - 1152px) / 2 + 28px);
     }
 }

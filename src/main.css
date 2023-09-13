@@ -93,7 +93,7 @@
     }
     /* [Movie Media] Episode Button */
     .episode-btn {
-        @apply w-10 h-9 m-1 inline-flex justify-center items-center
+        @apply min-w-[40px] px-2 h-9 m-1 inline-flex justify-center items-center
         text-sm rounded-md text-text bg-gray-700 hover:bg-gray-800 ;
     }
     .episode-btn-active {

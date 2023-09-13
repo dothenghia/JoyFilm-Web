@@ -16,7 +16,7 @@ const New = () => {
 
     // ------ Fetching Data
     useEffect(() => {
-        console.log('[New] Fetch New Data ...')
+        // console.log('[New] Fetch New Data ...')
         const fetchData = async () => {
             setMovies(null)
             let data = await Controller('GETNEWMOVIES', page)

@@ -1,11 +1,11 @@
+import CarouselThumbnails from '../components/CarouselThumbnails/CarouselThumbnails'
+import SkeletonSlide from "../components/SkeletonSlide/SkeletonSlide";
 import { useEffect, useState } from "react";
 import Controller from "../controllers/controller";
 import useTitle from '../hooks/useTitle'
 
-import CarouselThumbnails from '../components/CarouselThumbnails/CarouselThumbnails'
 import MovieSlide from '../components/MovieSlide/MovieSlide'
 import { Link } from "react-router-dom";
-import SkeletonSlide from "../components/SkeletonSlide/SkeletonSlide";
 
 const Home = () => {
     useTitle('Trang chủ | JoyFilm')
@@ -16,7 +16,7 @@ const Home = () => {
 
     // ------ Fetching Data
     useEffect(() => {
-        console.log('[Home] Fetch HomePage Data ...')
+        // console.log('[Home] Fetch HomePage Data ...')
         const fetchData = async () => {
             let data = await Controller('GETHOMEPAGEMOVIES')
             setMovies(data)

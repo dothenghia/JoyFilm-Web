@@ -20,6 +20,7 @@ const TrailerFrame = ({ url }) => {
             <iframe
                 className='aspect-video mx-auto w-full max-w-[700px]'
                 src={url}
+                loading='lazy'
                 allowFullScreen={true}
                 title="Video Trailer"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -32,6 +33,7 @@ const TrailerFrame = ({ url }) => {
             className='aspect-video mx-auto w-full max-w-[700px]'
             src={convertYouTubeUrl(url)}
             allowFullScreen={true}
+            loading='lazy'
             title="Video Trailer"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         ></iframe>
@@ -74,7 +76,7 @@ const RenderInformationArray = (array) => {
 }
 
 const MovieInfoSection = ({ info, media }) => {
-    console.log('[Movie] Info Render')
+    // console.log('[Movie] Info Render')
 
     useTitle(`${info.name} | JoyFilm`)
 

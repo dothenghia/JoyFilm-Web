@@ -16,7 +16,7 @@ const Cartoon = () => {
 
     // ------ Fetching Data
     useEffect(() => {
-        console.log('[Cartoon] Fetch Cartoon Data ...')
+        // console.log('[Cartoon] Fetch Cartoon Data ...')
         const fetchData = async () => {
             setMovies(null)
             let data = await Controller('GETCARTOONMOVIES', page)

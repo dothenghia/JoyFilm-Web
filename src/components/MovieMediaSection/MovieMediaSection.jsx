@@ -41,7 +41,7 @@ const ServerTabs = ({ media, svIndex }) => {
 
 
 const MovieMediaSection = ({ info, media, epIndex, svIndex }) => {
-    console.log('[Movie] Media Render')
+    // console.log('[Movie] Media Render')
 
     useTitle(`${info.name} - Tập ${media[svIndex].server_data[epIndex].name || ""} | JoyFilm`)
 
@@ -68,6 +68,7 @@ const MovieMediaSection = ({ info, media, epIndex, svIndex }) => {
             <iframe
                 className='aspect-video mx-auto mt-5 w-full'
                 src={media[svIndex].server_data[epIndex].link_embed}
+                loading='lazy'
                 allowFullScreen={true}
                 title="Video Trailer"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

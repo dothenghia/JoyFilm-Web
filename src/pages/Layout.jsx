@@ -5,7 +5,7 @@ import Footer from '../components/Footer/Footer'
 import SavedButton from "../components/SavedButton/SavedButton";
 
 const Layout = () => {
-    console.log('[Layout] Render')
+    // console.log('[Layout] Render')
 
     return (
         <>

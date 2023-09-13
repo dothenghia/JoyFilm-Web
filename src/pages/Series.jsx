@@ -16,7 +16,7 @@ const Series = () => {
 
     // ------ Fetching Data
     useEffect(() => {
-        console.log('[Series] Fetch Series Data ...')
+        // console.log('[Series] Fetch Series Data ...')
         const fetchData = async () => {
             setMovies(null)
             let data = await Controller('GETSERIESMOVIES', page)

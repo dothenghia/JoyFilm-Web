@@ -28,7 +28,6 @@ const Search = () => {
         const fetchData = async () => {
             setMovies(null)
             let data = await Controller('SEARCHMOVIE', name)
-            console.log(data)
             setMovies(data)
         }
 
@@ -37,9 +36,7 @@ const Search = () => {
 
 
     const keyDownHandler = (e) => {
-        console.log(e.key)
         if (e.key === 'Enter') {
-            console.log('Enter')
             navigate(`/tim-kiem?name=${searchInput}`)
         }
     }
@@ -71,7 +68,7 @@ const Search = () => {
                 </div>
 
                 {
-                    (!movies || !movies.data) ?
+                    (!movies) ?
                     (
                         <>
                             <SkeletonGrid />
@@ -82,7 +79,7 @@ const Search = () => {
                     ) :
                     (
                         <div className="mt-6 movies-grid">
-                            {movies.data.map((movie, index) => (
+                            {movies.map((movie, index) => (
                                 <MovieCard key={index} movie={movie} />
                             ))}
                         </div>

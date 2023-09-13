@@ -13,13 +13,13 @@ const Movie = () => {
     const [searchParams, setSearchParams] = useSearchParams()
     let tap = searchParams.get('tap') // index
     let sv = searchParams.get('sv') // index
-    console.log(tap, sv)
+    // console.log(tap, sv)
 
     // ------ Fetching Data
     useEffect(() => {
         const fetchData = async () => {
             let data = await Controller('GETMOVIE', slug)
-            console.log(data)
+            // console.log(data)
             setMovie(data)
         }
 

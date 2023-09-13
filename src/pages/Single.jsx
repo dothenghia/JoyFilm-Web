@@ -16,7 +16,7 @@ const Single = () => {
 
     // ------ Fetching Data
     useEffect(() => {
-        console.log('[Single] Fetch Single Data ...')
+        // console.log('[Single] Fetch Single Data ...')
         const fetchData = async () => {
             setMovies(null)
             let data = await Controller('GETSINGLEMOVIES', page)

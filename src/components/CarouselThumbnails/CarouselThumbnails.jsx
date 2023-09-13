@@ -71,7 +71,7 @@ const CarouselThumbnails = () => {
                         <div key={item.id}>
 
                             {/* ------ Carousel Thumbnail Image ------ */}
-                            <img src={item.poster_url} className='w-full h-full object-cover' />
+                            <img src={item.poster_url} loading='eager' className='w-full h-full object-cover' />
 
                             {/* ------ Carousel Legend Text ------ */}
                             <div className='carousel-texts '>
