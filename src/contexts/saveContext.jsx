@@ -10,13 +10,18 @@ function SaveProvider({ children }) {
         return localSaveList || [];
     })
 
+    const isSaved = (movie) => {
+        const exists = saveList.some((savedMovie) => savedMovie.name === movie.name);
+        return exists
+    }
+
     const toggleSaveMovie = (movie) => {
         console.log(movie)
-        const isSaved = saveList.some((savedMovie) => savedMovie.name === movie.name);
+        const exists = isSaved(movie);
 
-        if (isSaved) {
+        if (exists) {
             // Nếu đã tồn tại, xóa nó khỏi saveList
-            const updatedList = saveList.filter((savedMovie) => savedMovie.id !== movie.id);
+            const updatedList = saveList.filter((savedMovie) => savedMovie.name !== movie.name);
             setSaveList(updatedList);
             localStorage.setItem('saveList', JSON.stringify(updatedList));
         } else {
@@ -30,6 +35,7 @@ function SaveProvider({ children }) {
     const value = {
         saveList,
         setSaveList,
+        isSaved,
         toggleSaveMovie
     }
 

@@ -3,6 +3,8 @@ import thumbnail1 from '../../assets/thumbnails/carousel1.jpg'
 import thumbnail2 from '../../assets/thumbnails/carousel2.jpg'
 import thumbnail3 from '../../assets/thumbnails/carousel3.jpg'
 import thumbnail4 from '../../assets/thumbnails/carousel4.jpg'
+import bm from '../../assets/bookmark.svg'
+import bmfill from '../../assets/bookmark-fill.svg'
 
 import { Link } from 'react-router-dom'
 import { Carousel } from 'react-responsive-carousel'
@@ -94,17 +96,30 @@ const CarouselThumbnails = () => {
                                         </svg>
                                         Xem Phim
                                     </Link>
+
                                     <button
                                         onClick={() => { addToSaveList(item) }}
                                         className='add-button-color text-heading
                                                     text-sm min-[896px]:text-base min-[945px]:text-lg
                                                     px-2 py-2 sm:px-3 md:px-4 md:py-3 flex items-center'>
-                                        <svg className='mr-1 w-5 h-5 '
-                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" >
-                                            <line x1="12" y1="2" x2="12" y2="22"></line>
-                                            <line x1="2" y1="12" x2="22" y2="12"></line>
-                                        </svg>
-                                        Thêm vào Danh sách
+                                        {
+                                            (context.isSaved(item) ? (
+                                                <>
+                                                    <div className='h-full flex items-center'>
+                                                        <img src={bmfill} className="md:mt-[2px] lg:mt-1 mr-1 w-[18px] h-[18px]" alt="Bookmark" />
+                                                    </div>
+                                                    Đã lưu
+                                                </>
+                                            ) : (
+                                                <>
+                                                    <div className='h-full flex items-center'>
+                                                        <img src={bm} className="md:mt-[2px] lg:mt-1 mr-1 w-[18px] h-[18px]" alt="Bookmark" />
+                                                    </div>
+                                                    Lưu vào Danh sách
+                                                </>
+                                            ))
+                                        }
+
                                     </button>
                                 </div>
                             </div>

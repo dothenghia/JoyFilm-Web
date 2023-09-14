@@ -4,6 +4,9 @@ import BlurBox from '../BlurBox/BlurBox'
 import useTitle from '../../hooks/useTitle'
 import { saveContext } from '../../contexts/saveContext';
 
+import bm from '../../assets/bookmark.svg'
+import bmfill from '../../assets/bookmark-fill.svg'
+
 const convertYouTubeUrl = (inputUrl) => {
     if (!inputUrl.includes("watch?v=")) {
         return inputUrl;
@@ -79,6 +82,7 @@ const RenderInformationArray = (array) => {
 const MovieInfoSection = ({ info, media }) => {
     // console.log('[Movie] Info Render')
     const context = useContext(saveContext)
+
     const addToSaveList = (movie) => {
         context.toggleSaveMovie(movie)
     }
@@ -130,13 +134,31 @@ const MovieInfoSection = ({ info, media }) => {
                                     <svg className='mr-1 w-5 h-5 ' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"> <polygon points="5 3 19 12 5 21 5 3"></polygon> </svg>
                                     Xem Phim
                                 </Link>
-                                <button 
+                                <button
                                     onClick={() => { addToSaveList(info) }}
                                     className='add-button-color text-heading 
                                     text-sm min-[896px]:text-base min-[945px]:text-lg
                                     px-2 py-2 sm:px-3 md:px-4 md:py-2 flex items-center'>
-                                    <svg className='mr-1 w-5 h-5 ' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" > <line x1="12" y1="2" x2="12" y2="22"></line> <line x1="2" y1="12" x2="22" y2="12"></line> </svg>
-                                    Thêm vào Danh sách
+
+                                    {
+                                        (context.isSaved(info) ? (
+                                            <>
+                                                <div className='h-full flex items-center'>
+                                                    <img src={bmfill} className="min-[960px]:-mt-px lg:mt-0 mr-1 w-[18px] h-[18px]" alt="Bookmark" />
+                                                </div>
+                                                Đã lưu
+                                            </>
+                                        ) : (
+                                            <>
+                                                <div className='h-full flex items-center'>
+                                                    <img src={bm} className="min-[960px]:-mt-px lg:mt-0 mr-1 w-[18px] h-[18px]" alt="Bookmark" />
+                                                </div>
+                                                Lưu vào Danh sách
+                                            </>
+                                        ))
+                                    }
+
+
                                 </button>
                             </div>
 
@@ -154,8 +176,26 @@ const MovieInfoSection = ({ info, media }) => {
                             <button
                                 onClick={() => { addToSaveList(info) }}
                                 className='add-button-color text-heading text-sm px-2 py-2 sm:px-3 flex items-center'>
-                                <svg className='mr-1 w-5 h-5 ' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" > <line x1="12" y1="2" x2="12" y2="22"></line> <line x1="2" y1="12" x2="22" y2="12"></line> </svg>
-                                Thêm vào Danh sách
+
+                                {
+                                    (context.isSaved(info) ? (
+                                        <>
+                                            <div className='h-full flex items-center'>
+                                                <img src={bmfill} className=" mr-1 w-[18px] h-[18px]" alt="Bookmark" />
+                                            </div>
+                                            Đã lưu
+                                        </>
+                                    ) : (
+                                        <>
+                                            <div className='h-full flex items-center'>
+                                                <img src={bm} className=" mr-1 w-[18px] h-[18px]" alt="Bookmark" />
+                                            </div>
+                                            Lưu vào Danh sách
+                                        </>
+                                    ))
+                                }
+
+
                             </button>
                         </div>
 
