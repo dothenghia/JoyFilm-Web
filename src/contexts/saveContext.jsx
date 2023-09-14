@@ -6,7 +6,7 @@ function SaveProvider({ children }) {
 
     const [saveList, setSaveList] = useState(() => {
         let localSaveList = JSON.parse(localStorage.getItem('saveList'))
-        console.log(localSaveList)
+        // console.log(localSaveList)
         return localSaveList || [];
     })
 
@@ -16,7 +16,7 @@ function SaveProvider({ children }) {
     }
 
     const toggleSaveMovie = (movie) => {
-        console.log(movie)
+        // console.log(movie)
         const exists = isSaved(movie);
 
         if (exists) {

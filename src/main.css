@@ -10,6 +10,10 @@
     box-sizing: border-box;
 }
 
+.lazy-wrapper-span {
+    display: block !important;
+}
+
 @layer components {
     /* [Header] Navigation Link Button */
     .header-link {
@@ -101,7 +105,7 @@
     }
     /* [Movie Media] Feature Button */
     .feature-btn {
-        @apply py-1 px-2 rounded-md text-sm text-text bg-gray-700 hover:bg-gray-800 ;
+        @apply py-1 px-2 flex items-center rounded-md text-sm text-text bg-gray-700 hover:bg-gray-800 ;
     }
 
 }

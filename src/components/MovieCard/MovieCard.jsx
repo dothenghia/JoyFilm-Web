@@ -24,6 +24,7 @@ const MovieCard = ({ movie }) => {
                         delayTime={10}
                         // width={450}
                         // height={600}
+                        wrapperClassName="lazy-wrapper-span"
                         className="aspect-[9/13.5] group-hover:blur-sm group-hover:brightness-50
                                 scale-100 group-hover:scale-125 ease-in duration-200"
                     />

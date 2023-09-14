@@ -2,6 +2,12 @@ import { Link } from "react-router-dom";
 import BlurBox from "../BlurBox/BlurBox";
 import useTitle from '../../hooks/useTitle'
 
+import { saveContext } from '../../contexts/saveContext';
+
+import bm from '../../assets/bookmark.svg'
+import bmfill from '../../assets/bookmark-fill.svg'
+import { useContext } from "react";
+
 const EpisodeButtons = ({ media, epIndex, svIndex }) => {
     return (
         <div className="px-3 pt-3 pb-3 rounded-b-xl border-2 border-t-0 border-border">
@@ -42,6 +48,11 @@ const ServerTabs = ({ media, svIndex }) => {
 
 const MovieMediaSection = ({ info, media, epIndex, svIndex }) => {
     // console.log('[Movie] Media Render')
+    const context = useContext(saveContext)
+
+    const addToSaveList = (movie) => {
+        context.toggleSaveMovie(movie)
+    }
 
     useTitle(`${info.name} - Tập ${media[svIndex].server_data[epIndex].name || ""} | JoyFilm`)
 
@@ -76,7 +87,27 @@ const MovieMediaSection = ({ info, media, epIndex, svIndex }) => {
 
             <div className="flex justify-end space-x-2 mt-3">
                 <button className="feature-btn">Tắt đèn</button>
-                <button className="feature-btn">Lưu phim</button>
+                <button className="feature-btn"
+                    onClick={() => { addToSaveList(info) }}
+                >
+                    {
+                        (context.isSaved(info) ? (
+                            <>
+                                <div className='h-full flex items-center'>
+                                    <img src={bmfill} className="w-[14px] h-[14px] mr-1" alt="Bookmark" />
+                                </div>
+                                Đã lưu
+                            </>
+                        ) : (
+                            <>
+                                <div className='h-full flex items-center'>
+                                    <img src={bm} className="w-[14px] h-[14px] mr-1" alt="Bookmark" />
+                                </div>
+                                Lưu phim
+                            </>
+                        ))
+                    }
+                </button>
             </div>
 
 
