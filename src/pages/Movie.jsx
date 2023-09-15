@@ -28,7 +28,7 @@ const Movie = () => {
 
 
     return (
-        <div className="bg-background">
+        <div className="bg-background h-fit min-h-screen">
 
             {/* ------ Information Section ------ */}
             {movie && !tap && !sv && <MovieInfoSection info={movie.movie} media={movie.episodes} />}

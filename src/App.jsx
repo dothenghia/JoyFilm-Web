@@ -13,10 +13,11 @@ const Cartoon = lazy(() => import("./pages/Cartoon"));
 
 const Bookmark = lazy(() => import("./pages/Bookmark"));
 
-import Movie from "./pages/Movie";
+const Movie = lazy(() => import("./pages/Movie"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 import { SaveProvider } from '../src/contexts/saveContext.jsx'
+import ScrollToTop from './components/ScrollToTop/ScrollToTop'
 
 export default function App() {
     return (
@@ -24,77 +25,84 @@ export default function App() {
         <SaveProvider>
 
             <BrowserRouter>
+                <ScrollToTop>
 
-                <Routes>
-                    <Route path="/" element={<Layout />}>
+                    <Routes>
+                        <Route path="/" element={<Layout />}>
 
-                        <Route index element={<Home />} />
+                            <Route index element={<Home />} />
 
-                        <Route path="tim-kiem"
-                            element={
-                                <Suspense fallback={<div className="w-screen h-screen bg-background flex justify-center items-center">Loading...</div>}>
-                                    <Search />
-                                </Suspense>
-                            }
-                        />
+                            <Route path="tim-kiem"
+                                element={
+                                    <Suspense fallback={<div className="w-screen h-screen bg-background flex justify-center items-center">Loading...</div>}>
+                                        <Search />
+                                    </Suspense>
+                                }
+                            />
 
-                        <Route path="phim-moi/:page"
-                            element={
-                                <Suspense fallback={<div className="w-screen h-screen bg-background flex justify-center items-center">Loading...</div>}>
-                                    <New />
-                                </Suspense>
-                            }
-                        />
-                        <Route path="chieu-rap/:page"
-                            element={
-                                <Suspense fallback={<div className="w-screen h-screen bg-background flex justify-center items-center">Loading...</div>}>
-                                    <Theater />
-                                </Suspense>
-                            }
-                        />
-                        <Route path="phim-le/:page"
-                            element={
-                                <Suspense fallback={<div className="w-screen h-screen bg-background flex justify-center items-center">Loading...</div>}>
-                                    <Single />
-                                </Suspense>
-                            }
-                        />
-                        <Route path="phim-bo/:page"
-                            element={
-                                <Suspense fallback={<div className="w-screen h-screen bg-background flex justify-center items-center">Loading...</div>}>
-                                    <Series />
-                                </Suspense>
-                            }
-                        />
-                        <Route path="hoat-hinh/:page"
-                            element={
-                                <Suspense fallback={<div className="w-screen h-screen bg-background flex justify-center items-center">Loading...</div>}>
-                                    <Cartoon />
-                                </Suspense>
-                            }
-                        />
+                            <Route path="phim-moi/:page"
+                                element={
+                                    <Suspense fallback={<div className="w-screen h-screen bg-background flex justify-center items-center">Loading...</div>}>
+                                        <New />
+                                    </Suspense>
+                                }
+                            />
+                            <Route path="chieu-rap/:page"
+                                element={
+                                    <Suspense fallback={<div className="w-screen h-screen bg-background flex justify-center items-center">Loading...</div>}>
+                                        <Theater />
+                                    </Suspense>
+                                }
+                            />
+                            <Route path="phim-le/:page"
+                                element={
+                                    <Suspense fallback={<div className="w-screen h-screen bg-background flex justify-center items-center">Loading...</div>}>
+                                        <Single />
+                                    </Suspense>
+                                }
+                            />
+                            <Route path="phim-bo/:page"
+                                element={
+                                    <Suspense fallback={<div className="w-screen h-screen bg-background flex justify-center items-center">Loading...</div>}>
+                                        <Series />
+                                    </Suspense>
+                                }
+                            />
+                            <Route path="hoat-hinh/:page"
+                                element={
+                                    <Suspense fallback={<div className="w-screen h-screen bg-background flex justify-center items-center">Loading...</div>}>
+                                        <Cartoon />
+                                    </Suspense>
+                                }
+                            />
 
-                        <Route path="phim-da-luu"
-                            element={
-                                <Suspense fallback={<div className="w-screen h-screen bg-background flex justify-center items-center">Loading...</div>}>
-                                    <Bookmark />
-                                </Suspense>
-                            }
-                        />
+                            <Route path="phim-da-luu"
+                                element={
+                                    <Suspense fallback={<div className="w-screen h-screen bg-background flex justify-center items-center">Loading...</div>}>
+                                        <Bookmark />
+                                    </Suspense>
+                                }
+                            />
 
-                        <Route path="phim/:slug" element={<Movie />} />
+                            <Route path="phim/:slug"
+                                element={
+                                    <Suspense fallback={<div className="w-screen h-screen bg-background flex justify-center items-center">Loading...</div>}>
+                                        <Movie />
+                                    </Suspense>
+                                }
+                            />
 
-                        <Route path="*"
-                            element={
-                                <Suspense fallback={<div className="w-screen h-screen bg-background flex justify-center items-center">Loading...</div>}>
-                                    <NotFound />
-                                </Suspense>
-                            }
-                        />
+                            <Route path="*"
+                                element={
+                                    <Suspense fallback={<div className="w-screen h-screen bg-background flex justify-center items-center">Loading...</div>}>
+                                        <NotFound />
+                                    </Suspense>
+                                }
+                            />
 
-                    </Route>
-                </Routes>
-
+                        </Route>
+                    </Routes>
+                </ScrollToTop>
             </BrowserRouter >
         </SaveProvider>
     );

@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import placeholder from '../../assets/placeholder.png'
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import 'react-lazy-load-image-component/src/effects/blur.css';
 
@@ -12,22 +11,19 @@ const MovieCard = ({ movie }) => {
 
                 {/* ------ Thumbnail wrapper ------ */}
                 <div className="overflow-hidden rounded-lg lg:rounded-xl relative">
-                    {/* <img src={movie.thumb_url}
-                        loading="eager"
-                        className="aspect-[9/13.5] group-hover:blur-sm group-hover:brightness-50
-                                scale-100 group-hover:scale-125 ease-in duration-200" /> */}
-                    <LazyLoadImage
-                        src={movie.thumb_url}
-                        placeholderSrc={movie.thumb_url}
-                        alt={movie.name}
-                        effect="blur"
-                        delayTime={10}
-                        // width={450}
-                        // height={600}
-                        wrapperClassName="lazy-wrapper-span"
-                        className="aspect-[9/13.5] group-hover:blur-sm group-hover:brightness-50
-                                scale-100 group-hover:scale-125 ease-in duration-200"
-                    />
+                    <div className="aspect-[9/13.5] group-hover:blur-sm group-hover:brightness-50
+                                scale-100 group-hover:scale-125 ease-in duration-200">
+                        <LazyLoadImage
+                            src={movie.thumb_url}
+                            placeholderSrc={movie.thumb_url}
+                            alt={movie.name}
+                            effect="blur"
+                            delayTime={10}
+                            wrapperClassName="lazy-wrapper-span"
+                            className="aspect-[9/13.5]"
+                        />
+
+                    </div>
 
                     <svg className='absolute top-1/2 left-1/2 -translate-x-[40%] -translate-y-1/3 w-12 h-12 text-white opacity-0
                                 group-hover:opacity-100 ease-in duration-200'

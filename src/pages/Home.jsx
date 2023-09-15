@@ -8,6 +8,7 @@ import MovieSlide from '../components/MovieSlide/MovieSlide'
 import { Link } from "react-router-dom";
 
 const Home = () => {
+    // console.log('[Home] Render')
     useTitle('Trang chủ | JoyFilm')
 
     // ------ Data State

@@ -8,6 +8,8 @@ import MovieCard from "../components/MovieCard/MovieCard";
 import PageButtons from "../components/PageButtons/PageButtons";
 
 const Cartoon = () => {
+    // console.log('[Cartoon] Render')
+
     // ------ Data State
     const [movies, setMovies] = useState(null)
     let { page } = useParams()
