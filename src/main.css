@@ -20,6 +20,10 @@
         @apply block py-3 lg:py-4 px-4 mr-3 lg:mr-0 font-medium text-heading rounded-md
         lg:rounded-none lg:hover:pb-2 lg:hover:border-b-[3px] lg:hover:bg-transparent lg:hover:border-primary;
     }
+    /* [Footer] Link Button */
+    .footer-link {
+        @apply sm:ml-12 text-sm text-subheading hover:text-slate-200 hover:underline underline-offset-2;
+    }
 
 
     /* [Movie] Movie Grid */
