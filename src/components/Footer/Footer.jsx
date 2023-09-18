@@ -1,6 +1,7 @@
 import logo from '../../assets/logo.png';
 import joyfilm from '../../assets/joyfilm.png';
 import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 
 const Footer = () => {
     return (
@@ -11,22 +12,10 @@ const Footer = () => {
                     <img src={joyfilm} className="h-10" alt="JoyFilm" />
                 </Link>
                 <div className='flex w-full justify-evenly sm:w-auto items-center'>
-                    <Link className='footer-link'>
-                        Giới thiệu
-                    </Link>
-                    <Link to='https://github.com/dothenghia/JoyFilm-Web'
-                        target='_blank'
-                        className='footer-link'>
-                        Github
-                    </Link>
-                    <Link to='https://github.com/dothenghia/JoyFilm-Server'
-                        target='_blank'
-                        className='footer-link'>
-                        API
-                    </Link>
-                    <Link className='footer-link'>
-                        Liên hệ
-                    </Link>
+                    <Link to='/gioi-thieu' className='footer-link'>Giới thiệu</Link>
+                    <Link to='https://github.com/dothenghia/JoyFilm-Web' target='_blank' className='footer-link'>Github</Link>
+                    <Link to='https://github.com/dothenghia/JoyFilm-Server' target='_blank' className='footer-link'>API</Link>
+                    <HashLink smooth to='/gioi-thieu#contact' className='footer-link'>Liên hệ</HashLink>
                 </div>
             </div>
         </div>

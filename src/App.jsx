@@ -10,6 +10,7 @@ const Theater = lazy(() => import("./pages/Theater"));
 const Single = lazy(() => import("./pages/Single"));
 const Series = lazy(() => import("./pages/Series"));
 const Cartoon = lazy(() => import("./pages/Cartoon"));
+const About = lazy(() => import("./pages/About"));
 
 const Bookmark = lazy(() => import("./pages/Bookmark"));
 
@@ -34,7 +35,7 @@ export default function App() {
 
                             <Route path="tim-kiem"
                                 element={
-                                    <Suspense fallback={<div className="w-screen h-screen bg-background flex justify-center items-center">Loading...</div>}>
+                                    <Suspense fallback={<div className="loading-page">Loading...</div>}>
                                         <Search />
                                     </Suspense>
                                 }
@@ -42,43 +43,50 @@ export default function App() {
 
                             <Route path="phim-moi/:page"
                                 element={
-                                    <Suspense fallback={<div className="w-screen h-screen bg-background flex justify-center items-center">Loading...</div>}>
+                                    <Suspense fallback={<div className="loading-page">Loading...</div>}>
                                         <New />
                                     </Suspense>
                                 }
                             />
                             <Route path="chieu-rap/:page"
                                 element={
-                                    <Suspense fallback={<div className="w-screen h-screen bg-background flex justify-center items-center">Loading...</div>}>
+                                    <Suspense fallback={<div className="loading-page">Loading...</div>}>
                                         <Theater />
                                     </Suspense>
                                 }
                             />
                             <Route path="phim-le/:page"
                                 element={
-                                    <Suspense fallback={<div className="w-screen h-screen bg-background flex justify-center items-center">Loading...</div>}>
+                                    <Suspense fallback={<div className="loading-page">Loading...</div>}>
                                         <Single />
                                     </Suspense>
                                 }
                             />
                             <Route path="phim-bo/:page"
                                 element={
-                                    <Suspense fallback={<div className="w-screen h-screen bg-background flex justify-center items-center">Loading...</div>}>
+                                    <Suspense fallback={<div className="loading-page">Loading...</div>}>
                                         <Series />
                                     </Suspense>
                                 }
                             />
                             <Route path="hoat-hinh/:page"
                                 element={
-                                    <Suspense fallback={<div className="w-screen h-screen bg-background flex justify-center items-center">Loading...</div>}>
+                                    <Suspense fallback={<div className="loading-page">Loading...</div>}>
                                         <Cartoon />
+                                    </Suspense>
+                                }
+                            />
+                            <Route path="gioi-thieu"
+                                element={
+                                    <Suspense fallback={<div className="loading-page">Loading...</div>}>
+                                        <About />
                                     </Suspense>
                                 }
                             />
 
                             <Route path="phim-da-luu"
                                 element={
-                                    <Suspense fallback={<div className="w-screen h-screen bg-background flex justify-center items-center">Loading...</div>}>
+                                    <Suspense fallback={<div className="loading-page">Loading...</div>}>
                                         <Bookmark />
                                     </Suspense>
                                 }
@@ -86,7 +94,7 @@ export default function App() {
 
                             <Route path="phim/:slug"
                                 element={
-                                    <Suspense fallback={<div className="w-screen h-screen bg-background flex justify-center items-center">Loading...</div>}>
+                                    <Suspense fallback={<div className="loading-page">Loading...</div>}>
                                         <Movie />
                                     </Suspense>
                                 }
@@ -94,7 +102,7 @@ export default function App() {
 
                             <Route path="*"
                                 element={
-                                    <Suspense fallback={<div className="w-screen h-screen bg-background flex justify-center items-center">Loading...</div>}>
+                                    <Suspense fallback={<div className="loading-page">Loading...</div>}>
                                         <NotFound />
                                     </Suspense>
                                 }
