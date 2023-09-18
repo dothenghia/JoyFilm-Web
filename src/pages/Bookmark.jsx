@@ -5,7 +5,7 @@ import useTitle from '../hooks/useTitle'
 
 const Bookmark = () => {
     const context = useContext(saveContext)
-    console.log(context.saveList)
+    // console.log(context.saveList)
 
     useTitle(`Phim đã lưu (${context.saveList.length}) - JoyFilm`)
 

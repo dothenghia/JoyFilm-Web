@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import 'react-lazy-load-image-component/src/effects/blur.css';
+import phd from '../../assets/placeholder.png'
 
 const MovieCard = ({ movie }) => {
     return (
@@ -15,9 +16,9 @@ const MovieCard = ({ movie }) => {
                                 scale-100 group-hover:scale-125 ease-in duration-200">
                         <LazyLoadImage
                             src={movie.thumb_url}
-                            placeholderSrc={movie.thumb_url}
+                            placeholderSrc={phd}
                             alt={movie.name}
-                            effect="blur"
+                            // effect="blur"
                             delayTime={10}
                             wrapperClassName="lazy-wrapper-span"
                             className="aspect-[9/13.5]"
