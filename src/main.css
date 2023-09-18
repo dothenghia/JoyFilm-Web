@@ -43,7 +43,7 @@
     }
 
     .intro-right-section {
-        @apply md:basis-3/5 lg:basis-2/3;
+        @apply  md:mx-5 md:basis-3/5 lg:basis-2/3;
     }
 
     /* [Movie] Movie Grid */
