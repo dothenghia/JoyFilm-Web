@@ -3,46 +3,10 @@ import { Link } from 'react-router-dom';
 import BlurBox from '../BlurBox/BlurBox'
 import useTitle from '../../hooks/useTitle'
 import { saveContext } from '../../contexts/saveContext';
+import ReactPlayer from "react-player";
 
 import bm from '../../assets/bookmark.svg'
 import bmfill from '../../assets/bookmark-fill.svg'
-
-const convertYouTubeUrl = (inputUrl) => {
-    if (!inputUrl.includes("watch?v=")) {
-        return inputUrl;
-    }
-
-    const videoId = inputUrl.split("watch?v=")[1];
-
-    const embedUrl = `https://www.youtube.com/embed/${videoId}`;
-    return embedUrl;
-}
-
-const TrailerFrame = ({ url }) => {
-    if (!url.includes("youtube")) {
-        return (
-            <iframe
-                className='aspect-video mx-auto w-full max-w-[700px]'
-                src={url}
-                loading='lazy'
-                allowFullScreen={true}
-                title="Video Trailer"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            ></iframe>
-        )
-    }
-
-    return (
-        <iframe
-            className='aspect-video mx-auto w-full max-w-[700px]'
-            src={convertYouTubeUrl(url)}
-            allowFullScreen={true}
-            loading='lazy'
-            title="Video Trailer"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        ></iframe>
-    )
-}
 
 const CategoryChip = ({ categories }) => {
     return (
@@ -244,7 +208,15 @@ const MovieInfoSection = ({ info, media }) => {
                             <p className="movie-normal-text">Không tìm thấy Trailer cho phim này</p>
                         ) :
                         (
-                            <TrailerFrame url={info.trailer_url} />
+                            <div className='aspect-video mx-auto mt-5 w-full bg-black'>
+                                <ReactPlayer
+                                    width={'100%'}
+                                    height={'100%'}
+                                    url={info.trailer_url}
+                                    pip={true}
+                                    controls={true}
+                                />
+                            </div>
                         )
                 }
 

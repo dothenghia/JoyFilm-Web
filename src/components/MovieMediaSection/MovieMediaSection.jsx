@@ -1,12 +1,13 @@
 import { Link } from "react-router-dom";
 import BlurBox from "../BlurBox/BlurBox";
 import useTitle from '../../hooks/useTitle'
+import ReactPlayer from "react-player";
 
 import { saveContext } from '../../contexts/saveContext';
 
 import bm from '../../assets/bookmark.svg'
 import bmfill from '../../assets/bookmark-fill.svg'
-import { useContext } from "react";
+import { useContext, useState } from "react";
 
 const EpisodeButtons = ({ media, epIndex, svIndex }) => {
     return (
@@ -47,7 +48,7 @@ const ServerTabs = ({ media, svIndex }) => {
 
 
 const MovieMediaSection = ({ info, media, epIndex, svIndex }) => {
-    // console.log('[Movie] Media Render')
+    const [player, setPlayer] = useState(true)
     const context = useContext(saveContext)
 
     const addToSaveList = (movie) => {
@@ -76,17 +77,56 @@ const MovieMediaSection = ({ info, media, epIndex, svIndex }) => {
 
 
             {/* ------ Media Player Section ------ */}
-            <iframe
-                className='aspect-video mx-auto mt-5 w-full'
-                src={media[svIndex].server_data[epIndex].link_embed}
-                loading='lazy'
-                allowFullScreen={true}
-                title="Video Trailer"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            ></iframe>
+            {
+                player ?
+                    (
+                        <iframe
+                            className='aspect-video mx-auto mt-5 w-full'
+                            src={media[svIndex].server_data[epIndex].link_embed}
+                            loading='lazy'
+                            allowFullScreen={true}
+                            title="Video Trailer"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        ></iframe>
+                    ) :
+                    (
+                        <div className='aspect-video mx-auto mt-5 w-full bg-black'>
+                            <ReactPlayer
+                                width={'100%'}
+                                height={'100%'}
+                                url={media[svIndex].server_data[epIndex].link_m3u8}
+                                playsinline={true}
+                                pip={true}
+                                stopOnUnmount={false}
+                                controls={true}
+                            />
+                        </div>
+                    )
+            }
 
-            <div className="flex justify-end space-x-2 mt-3">
-                <button className="feature-btn">Tắt đèn</button>
+
+
+            <div className="flex justify-end items-center space-x-2 mt-3">
+                <div className="relative group">
+                    <span class="hidden group-hover:block
+                            absolute top-[calc(100%+10px)] left-1/2 -translate-x-1/2 w-64
+                            text-center rounded-lg p-2 bg-gray-700 text-text text-xs
+                            after:content-[''] after:absolute after:bottom-full after:left-1/2
+                            after:-translate-x-1/2 after:border-gray-700 after:w-0 after:h-0
+                            after:border-l-[6px] after:border-l-transparent
+                            after:border-r-[6px] after:border-r-transparent
+                            after:border-b-[6px]
+                    ">
+                        Gợi ý: Hãy đổi player nếu bạn không thích thanh tiến trình màu đỏ góc dưới màn hình
+                    </span>
+                    <svg className="w-[22px] h-[22px]" viewBox="0 0 48.00 48.00" xmlns="http://www.w3.org/2000/svg" fill="#ffffff" stroke="#ffffff" stroke-width="0.00048000000000000007"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>information-circle</title> <g id="Layer_2" data-name="Layer 2"> <g id="invisible_box" data-name="invisible box"> <rect width="48" height="48" fill="none"></rect> </g> <g id="icons_Q2" data-name="icons Q2"> <path d="M24,2A22,22,0,1,0,46,24,21.9,21.9,0,0,0,24,2Zm0,40A18,18,0,1,1,42,24,18.1,18.1,0,0,1,24,42Z"></path> <path d="M24,20a2,2,0,0,0-2,2V34a2,2,0,0,0,4,0V22A2,2,0,0,0,24,20Z"></path> <circle cx="24" cy="14" r="2"></circle> </g> </g> </g></svg>
+                </div>
+                <button className="feature-btn"
+                    onClick={() => { setPlayer(!player) }}
+                >
+                    <svg className="w-[16px] h-[16px] mr-1" viewBox="0 0 48.00 48.00" xmlns="http://www.w3.org/2000/svg" fill="#ffffff" stroke="#ffffff" stroke-width="0.00048000000000000007"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>swap-horizontal</title> <g id="Layer_2" data-name="Layer 2"> <g id="invisible_box" data-name="invisible box"> <rect width="48" height="48" fill="none"></rect> </g> <g id="icons_Q2" data-name="icons Q2"> <g> <path d="M33.5,23.6a2.1,2.1,0,0,0-2.7-.2,1.9,1.9,0,0,0-.2,3L35.2,31H8a2,2,0,0,0,0,4H35.2l-4.6,4.6a1.9,1.9,0,0,0,.2,3,2.1,2.1,0,0,0,2.7-.2l7.9-8a1.9,1.9,0,0,0,0-2.8Z"></path> <path d="M14.5,24.4a2.1,2.1,0,0,0,2.7.2,1.9,1.9,0,0,0,.2-3L12.8,17H40a2,2,0,0,0,0-4H12.8l4.6-4.6a1.9,1.9,0,0,0-.2-3,2.1,2.1,0,0,0-2.7.2l-7.9,8a1.9,1.9,0,0,0,0,2.8Z"></path> </g> </g> </g> </g></svg>
+                    Đổi player
+                </button>
                 <button className="feature-btn"
                     onClick={() => { addToSaveList(info) }}
                 >
