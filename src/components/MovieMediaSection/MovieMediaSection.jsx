@@ -109,7 +109,7 @@ const MovieMediaSection = ({ info, media, epIndex, svIndex }) => {
             <div className="flex justify-end items-center space-x-2 mt-3">
                 <div className="relative group">
                     <span class="hidden group-hover:block
-                            absolute top-[calc(100%+10px)] left-1/2 -translate-x-1/2 w-64
+                            absolute top-[calc(100%+10px)] left-1/2 -translate-x-1/2 w-48 sm:w-64
                             text-center rounded-lg p-2 bg-gray-700 text-text text-xs
                             after:content-[''] after:absolute after:bottom-full after:left-1/2
                             after:-translate-x-1/2 after:border-gray-700 after:w-0 after:h-0
