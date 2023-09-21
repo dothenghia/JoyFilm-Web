@@ -12,7 +12,7 @@
 
 ## 2. Tech Stack
 
-### 2.1. Front-end
+### Front-end
 
 - HTML, CSS & JavaScript
 
@@ -20,17 +20,17 @@
 
 - ViteJS, Tailwind CSS
 
-### 2.2. Back-end
+### Back-end
 
 - NodeJS
 
 - ExpressJS
 
-### 2.3. Cơ Sở Dữ Liệu
+### Database
 
 - MongoDB
 
-### 2.4. Triển Khai
+### Deploy
 
 - Vercel (Front-end)
 
