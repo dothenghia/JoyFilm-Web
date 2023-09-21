@@ -31,7 +31,7 @@ const About = () => {
                         JoyFilm là một dự án Fullstack được tạo ra để kết hợp đam mê về lập trình và đam mê về điện ảnh. Website này không chỉ là một sản phẩm để thực hành kỹ năng, mà còn là một cơ hội để mang lại trải nghiệm xem phim tốt nhất cho người dùng.
                     </p>
                     <p className='intro-paragraph'>
-                        JoyFilm hỗ trợ một loạt các thể loại phim, từ phim lẻ, phim bộ, đến phim chiếu rạp và phim hoạt hình anime. Chúng tôi không ngừng phát triển để cung cấp thêm nhiều lựa chọn thú vị như phim hành động, tình cảm, phiêu lưu, TV show, và nhiều thể loại khác.
+                        JoyFilm hỗ trợ đa dạng thể loại phim, từ phim lẻ, phim bộ, đến phim chiếu rạp và phim hoạt hình anime. JoyFilm không ngừng phát triển để cung cấp thêm nhiều lựa chọn thú vị như phim hành động, tình cảm, phiêu lưu, TV show, và nhiều thể loại khác.
                     </p>
                 </div>
             </div>
