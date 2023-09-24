@@ -43,7 +43,7 @@ const RenderInformationArray = (array) => {
     }
 }
 
-const MovieInfoSection = ({ info, media }) => {
+const MovieInfoSection = ({ info }) => {
     // console.log('[Movie] Info Render')
     const context = useContext(saveContext)
 
