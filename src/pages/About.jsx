@@ -5,6 +5,7 @@ import sc1 from '../assets/sc1.png';
 import sc2 from '../assets/sc2.png';
 import sc3 from '../assets/sc3.png';
 import { Link } from 'react-router-dom';
+import IntroNewVersion from '../components/IntroNewVersion/IntroNewVersion'
 
 const About = () => {
 
@@ -13,7 +14,12 @@ const About = () => {
 
     return (
         <div className="page-container-0topside">
-            <div className="section-container mt-3 flex flex-col md:flex-row">
+
+            <div className='section-container pt-3'>
+                <IntroNewVersion />
+            </div>
+
+            <div className="section-container mt-6 flex flex-col md:flex-row">
                 {/* ------ Logo ------ */}
                 <div className='intro-left-section'>
                     <div className="h-full flex flex-col justify-center items-center">

@@ -6,7 +6,7 @@
 
 - Website này hỗ trợ đa dạng thể loại phim, từ phim lẻ, phim bộ, đến phim chiếu rạp và phim hoạt hình anime. JoyFilm được phát triển theo cơ sở **MERN Stack** (MongoDB, ExpressJS, React, NodeJS).
 
-- ***Tuy nhiên tôi đã chuyển sang xây dựng một phiên bản khác sử dụng kết hợp với NextJS - 1 framework nổi tiếng phổ biến của ReactJS, giúp cải thiện hiệu năng và hỗ trợ SSR.***
+- ***Tuy nhiên tôi đã chuyển sang xây dựng một phiên bản khác sử dụng kết hợp với NextJS - 1 framework nổi tiếng phổ biến của ReactJS, giúp hỗ trợ optimize, SSR, caching, prefetching,...***
 
     ***Repository này tôi vẫn sẽ giữ lại nhằm mục đích chia sẻ sản phẩm và những kiến thức tôi đã học được trong quá trình xây dựng ứng dụng MERN Stack.***
 

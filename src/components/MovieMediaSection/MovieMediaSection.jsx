@@ -8,6 +8,7 @@ import { saveContext } from '../../contexts/saveContext';
 import bm from '../../assets/bookmark.svg'
 import bmfill from '../../assets/bookmark-fill.svg'
 import { useContext, useState } from "react";
+import IntroNewVersion from '../IntroNewVersion/IntroNewVersion'
 
 const EpisodeButtons = ({ media, epIndex, svIndex }) => {
     return (
@@ -60,18 +61,12 @@ const MovieMediaSection = ({ info, media, epIndex, svIndex }) => {
     return (
         <div className="section-container pt-16 pb-32">
 
-            {/* ------ Notify about the update schedule ------ */}
-            <div className="rounded-lg overflow-hidden text-center">
-                <BlurBox>
-                    <div className="py-2 px-4 text-xs sm:text-sm text-subheading">
-                        Phim sẽ được cập nhật mỗi tối Thứ 2, 4, 6 và Chủ nhật hàng tuần 🥰
-                    </div>
-                </BlurBox>
-            </div>
+            {/* ------ Notify about the New Version ------ */}
+            <IntroNewVersion/>
 
 
             {/* ------ Movie Title Link ------ */}
-            <Link to={`/phim/${info.slug}`} className="section-title-link block mt-8">
+            <Link to={`/phim/${info.slug}`} className="section-title-link block mt-4">
                 {info.name}
             </Link>
 

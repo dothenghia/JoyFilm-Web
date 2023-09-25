@@ -6,6 +6,7 @@ import SkeletonGrid from "../components/SkeletonGrid/SkeletonGrid";
 
 import MovieCard from "../components/MovieCard/MovieCard";
 import PageButtons from "../components/PageButtons/PageButtons";
+import IntroNewVersion from '../components/IntroNewVersion/IntroNewVersion'
 
 const New = () => {
     // ------ Data State
@@ -30,6 +31,9 @@ const New = () => {
     return (
         <div id="new" className="page-container-0topside">
             <div className="section-container">
+            
+                <IntroNewVersion/>
+
                 <h1 className="section-title-no-up">Phim mới cập nhật - Trang {page}</h1>
 
                 {

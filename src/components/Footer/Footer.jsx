@@ -11,8 +11,9 @@ const Footer = () => {
                     <img src={logo} className="h-11 mr-2" alt="Logo" />
                     <img src={joyfilm} className="h-10" alt="JoyFilm" />
                 </Link>
-                <div className='flex w-full justify-evenly sm:w-auto items-center'>
+                <div className='flex flex-col sm:flex-row w-full justify-evenly sm:w-auto items-center'>
                     <Link to='/gioi-thieu' className='footer-link'>Giới thiệu</Link>
+                    <Link to='https://myjoyfilm.vercel.app/' target='_blank' className='footer-link font-medium text-secondary hover:text-secondary'>Phiên bản mới</Link>
                     <Link to='https://github.com/dothenghia/JoyFilm-Web' target='_blank' className='footer-link'>Github</Link>
                     <Link to='https://github.com/dothenghia/JoyFilm-Server' target='_blank' className='footer-link'>API</Link>
                     <HashLink smooth to='/gioi-thieu#contact' className='footer-link'>Liên hệ</HashLink>

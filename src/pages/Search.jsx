@@ -5,6 +5,7 @@ import Controller from "../controllers/controller";
 import { Link } from "react-router-dom";
 import useTitle from '../hooks/useTitle'
 import SkeletonGrid from "../components/SkeletonGrid/SkeletonGrid";
+import IntroNewVersion from '../components/IntroNewVersion/IntroNewVersion'
 
 const Search = () => {
 
@@ -43,8 +44,11 @@ const Search = () => {
 
 
     return (
-        <div id="search" className="bg-background h-fit min-h-screen">
-            <div className="section-container pt-20">
+        <div id="search" className="page-container-0topside">
+            <div className="section-container">
+
+                <IntroNewVersion />
+
                 <h1 className="section-title-no-up">Tìm kiếm : "{name}"</h1>
 
                 <div className="relative flex mt-4">
@@ -69,21 +73,21 @@ const Search = () => {
 
                 {
                     (!movies) ?
-                    (
-                        <>
-                            <SkeletonGrid />
-                            <SkeletonGrid />
-                            <SkeletonGrid />
-                            <SkeletonGrid />
-                        </>
-                    ) :
-                    (
-                        <div className="mt-6 movies-grid">
-                            {movies.map((movie, index) => (
-                                <MovieCard key={index} movie={movie} />
-                            ))}
-                        </div>
-                    )
+                        (
+                            <>
+                                <SkeletonGrid />
+                                <SkeletonGrid />
+                                <SkeletonGrid />
+                                <SkeletonGrid />
+                            </>
+                        ) :
+                        (
+                            <div className="mt-6 movies-grid">
+                                {movies.map((movie, index) => (
+                                    <MovieCard key={index} movie={movie} />
+                                ))}
+                            </div>
+                        )
                 }
             </div>
         </div>

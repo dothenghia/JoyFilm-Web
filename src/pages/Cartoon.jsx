@@ -6,6 +6,7 @@ import SkeletonGrid from "../components/SkeletonGrid/SkeletonGrid";
 
 import MovieCard from "../components/MovieCard/MovieCard";
 import PageButtons from "../components/PageButtons/PageButtons";
+import IntroNewVersion from '../components/IntroNewVersion/IntroNewVersion'
 
 const Cartoon = () => {
     // console.log('[Cartoon] Render')
@@ -32,6 +33,9 @@ const Cartoon = () => {
     return (
         <div id="cartoon" className="page-container-0topside">
             <div className="section-container">
+            
+                <IntroNewVersion/>
+
                 <h1 className="section-title-no-up">Phim hoạt hình - Trang {page}</h1>
 
                 {

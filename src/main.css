@@ -23,7 +23,7 @@
 
     /* [Footer] Link Button */
     .footer-link {
-        @apply sm:ml-12 text-sm text-subheading hover:text-slate-200 hover:underline underline-offset-2;
+        @apply py-2 sm:py-0 sm:ml-6 md:ml-12 text-base sm:text-sm text-subheading hover:text-slate-200 hover:underline underline-offset-2;
     }
 
     .loading-page {
